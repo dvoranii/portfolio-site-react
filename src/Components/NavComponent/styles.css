@@ -1,0 +1,114 @@
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav--wrapper {
+  background: #2d99f9;
+}
+
+.nav--logo {
+  padding: 10px;
+  max-width: 75px;
+}
+
+.nav--list {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-right: 20px;
+  transition: transform 250ms ease;
+}
+
+.nav--list li {
+  padding: 0px 20px;
+  color: white;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+}
+
+.nav--list li:hover {
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+
+.nav-active li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-active li:nth-of-type(1) {
+  transition-delay: 0s;
+}
+
+.nav-active li:nth-of-type(2) {
+  transition-delay: 0.25s;
+}
+
+.nav-active li:nth-of-type(3) {
+  transition-delay: 0.5s;
+}
+
+.nav-active li:nth-of-type(4) {
+  transition-delay: 0.75s;
+}
+
+.burger {
+  padding: 20px;
+  display: none;
+  transition: all 150ms ease;
+}
+
+.burger:hover {
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav--list li {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav--list {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    right: 0px;
+    background: #2d99f9;
+    height: 92vh;
+    margin-top: 99vh;
+    width: 50%;
+    transform: translateX(100%);
+    transition: all 250ms ease;
+  }
+
+  .nav--links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+.nav--list.nav-active {
+  transform: translateX(0%);
+}
