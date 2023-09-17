@@ -1,5 +1,6 @@
 .hero--wrapper {
   background-color: #2d99f9;
+  overflow: hidden;
 }
 
 .container {

@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .nav--wrapper {
@@ -62,6 +63,7 @@
   padding: 20px;
   display: none;
   transition: all 150ms ease;
+  z-index: 99;
 }
 
 .burger:hover {
@@ -89,14 +91,15 @@
     overflow-x: hidden;
   }
   .nav--list {
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    right: 0px;
-    background: #2d99f9;
-    height: 92vh;
-    margin-top: 99vh;
+    position: fixed;
+    top: 0;
+    right: 0;
     width: 50%;
+    height: 100%;
+    background: #2d99f9;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 60px;
     transform: translateX(100%);
     transition: all 250ms ease;
   }
