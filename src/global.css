@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  background: #fcfcfc;
+}
+
 p {
   font-size: 1rem;
 }

@@ -1,6 +1,7 @@
 .hero--wrapper {
   background-color: #2d99f9;
   overflow: hidden;
+  padding-top: 3.2rem;
 }
 
 .container {
@@ -188,13 +189,14 @@
   }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 568px) {
   #projects-btn,
   #services-btn {
     width: 106px;
   }
   .hero-btns {
     justify-content: center;
+    gap: 32px;
   }
 
   .hero--intro-text__wrapper {
@@ -203,11 +205,12 @@
   }
   .hero--inner {
     flex-direction: column;
-    padding: 60px 0px 0px 0px;
+    padding: 105px 0px 0px 0px;
   }
 
   .hero--img__wrapper--inner img {
     width: 100%;
     margin-left: 0px;
+    margin-top: 2.8rem;
   }
 }
