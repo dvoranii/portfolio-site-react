@@ -1,13 +1,47 @@
+import { useEffect, useState } from "react";
 import "./styles.css";
 import LaptopHeader from "/assets/LaptopHeader.svg";
 
 function HeroComponent() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [jobTitle, setJobTitle] = useState("");
+  const speed = 60;
+  const text = "Full Stack Developer";
+  let i = 0;
+
+  // understand closures here...
+  // could make a useful tutorial...
+  // Need to use this apprao
+
+  useEffect(() => {
+    i = 0; // Reset i to 0 every time useEffect runs
+    setJobTitle(""); // Reset jobTitle to an empty string every time useEffect runs
+
+    // Use a timeout to ensure jobTitle is reset before starting the typing effect
+    setTimeout(() => {
+      function typeWriter() {
+        if (i < text.length) {
+          let currentI = i;
+          setJobTitle((prev) => prev + text.charAt(currentI));
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+
+      typeWriter();
+    }, 50);
+  }, []);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
-    <div className="hero--wrapper">
+    <div className="hero--wrapper" id="section1">
       <div className={`hero--inner container`}>
         <div className="hero--intro-text__wrapper">
           <h1>Ildi&nbsp;Dvorani</h1>
-          <h2>Full&nbsp;Stack&nbsp;Developer</h2>
+          <h2>{jobTitle}</h2>
           <p>Welcome to my portfolio website...</p>
           <div className="hero-btns">
             <a href="#projects">
@@ -24,7 +58,11 @@ function HeroComponent() {
         </div>
         <div className="hero--img__wrapper--outer">
           <div className="hero--img__wrapper--inner">
-            <img src={LaptopHeader}></img>
+            <img
+              className={`laptop-img ${isLoaded ? "loaded" : ""}`}
+              src={LaptopHeader}
+              onLoad={() => setIsLoaded(true)}
+            />
           </div>
         </div>
       </div>

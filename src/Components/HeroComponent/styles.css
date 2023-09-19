@@ -1,6 +1,5 @@
 .hero--wrapper {
   background-color: #2d99f9;
-  overflow: hidden;
   padding-top: 3.2rem;
 }
 
@@ -98,7 +97,7 @@
   height: 36px;
   color: #fff;
   border-radius: 5px;
-  font-family: "Montserrat";
+  font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
   background: transparent;
   cursor: pointer;
@@ -180,12 +179,35 @@
   width: 100%;
 }
 
+.laptop-img {
+  opacity: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.laptop-img.loaded {
+  animation: fadeInSlideLeft 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
 @keyframes move-forever {
   0% {
     transform: translate3d(-90px, 0, 0);
   }
   100% {
     transform: translate3d(85px, 0, 0);
+  }
+}
+
+@keyframes fadeInSlideLeft {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+    visibility: visible;
   }
 }
 

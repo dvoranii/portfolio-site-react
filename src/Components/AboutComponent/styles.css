@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 .about--wrapper {
   padding: 12.4rem 2.4rem 0rem 2.4rem;
 }
@@ -24,7 +26,7 @@
 }
 
 .about-title {
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   display: inline-block;
   font-size: 62px;
   color: #333;
@@ -42,7 +44,7 @@
   padding: 4.2rem 2.4rem 0rem 2.4rem;
 }
 .about-me__part1--header {
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   color: #1a98ff;
   font-size: clamp(24px, 3vw, 32px);
   margin-bottom: 16px;

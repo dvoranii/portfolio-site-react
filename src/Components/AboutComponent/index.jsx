@@ -20,6 +20,7 @@ function AboutComponent() {
             fuga sit voluptatem dignissimos non sed distinctio, magnam nostrum
             hic repudiandae.
           </p>
+          <a href="#section1">See more</a>
         </div>
         <div className="about-me__img-container">
           <img className="about-me__img" src={DevelopmentImg}></img>

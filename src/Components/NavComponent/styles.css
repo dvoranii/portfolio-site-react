@@ -130,6 +130,10 @@
     height: 80px;
   }
 
+  .nav--list {
+    justify-content: space-evenly;
+  }
+
   .nav--logo {
     width: 90px;
   }
