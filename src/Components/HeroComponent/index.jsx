@@ -15,7 +15,7 @@ function HeroComponent() {
 
   useEffect(() => {
     i = 0; // Reset i to 0 every time useEffect runs
-    setJobTitle(""); // Reset jobTitle to an empty string every time useEffect runs
+    setJobTitle(" "); // Reset jobTitle to an empty string every time useEffect runs
 
     // Use a timeout to ensure jobTitle is reset before starting the typing effect
     setTimeout(() => {
@@ -49,9 +49,9 @@ function HeroComponent() {
                 <span>Projects</span>
               </button>
             </a>
-            <a href="#services">
+            <a href="/#about-me--section">
               <button className={`custom-btn btn-3`} id="services-btn">
-                <span>Services</span>
+                <span>About Me</span>
               </button>
             </a>
           </div>

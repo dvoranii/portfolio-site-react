@@ -1,49 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 .about--wrapper {
   padding: 12.4rem 2.4rem 0rem 2.4rem;
 }
 
-.about-title-container-inner {
-  position: relative;
-}
-
-.about-title-container-inner::before {
-  content: "";
-  width: 88px;
-  height: 32px;
-  background-color: #f2c94c;
-  position: absolute;
-  bottom: 44px;
-  left: 71%;
-  z-index: -1;
-}
-
-.about-title-container {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.about-title {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  display: inline-block;
-  font-size: 62px;
-  color: #333;
-  letter-spacing: 1.2px;
-  margin-bottom: 2.4rem;
-  font-weight: 600;
-  z-index: 600;
-  text-shadow: 2px 2px 4px #00000046;
-}
-
-.about-me__part1 {
+.about-me__part1,
+.about-me__part2 {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 4.2rem 2.4rem 0rem 2.4rem;
 }
-.about-me__part1--header {
+.about-me__part1--header,
+.about-me__part2--header {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   color: #1a98ff;
   font-size: clamp(24px, 3vw, 32px);
@@ -59,14 +29,23 @@
 }
 
 .about-me__img-container img {
+  width: 54%;
+}
+
+.about-me__part2 .about-me__img-container img {
   width: 70%;
 }
 
-.about-me__img-container::before {
+.about-me__part2 .about-me__text-container {
+  padding-left: 0;
+  padding-right: 40px;
+}
+.about-me__part2 .about-me__img-container::before {
   content: "";
   display: absolute;
   width: 50%;
   padding-bottom: 50%;
+
   background-image: linear-gradient(
     209.25deg,
     #00e5ff6c 13.05%,
@@ -76,8 +55,21 @@
   z-index: -1;
   position: absolute;
   border-radius: 50%;
-  left: 30%;
+  left: 23%;
   bottom: 15%;
+}
+.about-me__img-container::before {
+  content: "";
+  display: absolute;
+  width: 50%;
+  padding-bottom: 50%;
+  background-image: linear-gradient(209.25deg, #04b1ff 13.05%, #2fa3ff 88.99%);
+  box-shadow: 0px 20px 80px #00e5ff56;
+  z-index: -1;
+  position: absolute;
+  border-radius: 50%;
+  left: 30%;
+  bottom: 8%;
 }
 
 .about-me__text-container {
@@ -88,6 +80,65 @@
 .about-me__text-container p {
   font-size: clamp(14px, 3vw, 18px);
   line-height: 1.5;
+  padding-bottom: 12px;
+}
+
+.see-more--link {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  position: relative;
+  letter-spacing: 0.25px;
+  transition: all 150ms ease;
+}
+
+.see-more--link::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 37px;
+  width: 0%;
+  height: 10px;
+  opacity: 0;
+  background-color: #f2c94c;
+  transition: all 0.3s ease;
+  /* transition-delay: 80ms; */
+  z-index: -1;
+}
+
+.see-more--link__wrapper--outer:hover .see-more--link::before {
+  width: 55%;
+  opacity: 1;
+}
+
+.see-more--link:hover {
+  color: black;
+  /* margin-left: -4px; */
+}
+.see-more--link__wrapper--outer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.dash {
+  width: 18px;
+  margin-top: -2px;
+  height: 3px;
+  opacity: 1;
+  background-color: #2780de;
+  transition: all 175ms ease;
+}
+
+.see-more--link__wrapper--outer:hover .dash {
+  margin-left: 4px;
+  background-color: #2780deb6;
+}
+
+.see-more--link__wrapper--outer:hover .see-more--link {
+  margin-left: -4px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -97,8 +148,28 @@
 }
 
 @media screen and (max-width: 780px) {
+  .about-me__part1,
+  .about-me__part2 {
+    padding: 4.2rem 0rem 0rem 0rem;
+  }
+
   .about-me__part1 {
     flex-direction: column;
+  }
+
+  .about-me__part2 {
+    display: grid;
+    grid-template-rows: 0.2fr 1fr;
+    padding-top: 9.4rem;
+  }
+
+  .about-me__part2 .about-me__text-container {
+    grid-row: 1;
+    padding: 0;
+  }
+
+  .about-me__part2 .about-me__img-container img {
+    width: 100%;
   }
   .about-me__text-container {
     padding-left: 0px;
@@ -108,6 +179,7 @@
     min-width: 100%;
     display: flex;
     justify-content: center;
+    padding-right: 0;
   }
 
   .about-me__img-container::before {
@@ -115,19 +187,27 @@
     left: 30%;
   }
 
+  .about-me__part2 .about-me__img-container::before {
+    width: 70%;
+    padding-bottom: 70%;
+    bottom: 18%;
+    left: 10%;
+  }
+
   .about-me__img-container::before {
-    width: 80%;
-    padding-bottom: 80%;
-    bottom: 14%;
-    left: 11%;
+    width: 70%;
+    padding-bottom: 70%;
+    bottom: 4%;
+    left: 20%;
   }
 
   .about-me__img-container img {
-    width: 100%;
+    width: 70%;
+    margin-left: -12px;
   }
 
-  .about-me__img-container {
-    padding-top: 2.4rem;
+  .about-me__img-container.part1 {
+    padding-top: 4.2rem;
   }
 
   .about-title {

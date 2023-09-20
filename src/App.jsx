@@ -2,6 +2,8 @@ import "./global.css";
 import NavComponent from "./Components/NavComponent";
 import HeroComponent from "./Components/HeroComponent";
 import AboutComponent from "./Components/AboutComponent";
+import SkillsComponent from "./Components/SkillsComponent";
+import ProjectsComponent from "./Components/ProjectsComponent";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
         <NavComponent></NavComponent>
         <HeroComponent></HeroComponent>
         <AboutComponent></AboutComponent>
+        <SkillsComponent></SkillsComponent>
+        <ProjectsComponent></ProjectsComponent>
       </div>
     </>
   );
