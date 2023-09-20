@@ -77,7 +77,6 @@
 @media screen and (max-width: 480px) {
   .tilt {
     width: 35vh !important;
-    /* height: 0vw !important; */
     min-height: 480px;
   }
 }

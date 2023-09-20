@@ -4,7 +4,11 @@ import TitleComponent from "../TitleComponent";
 function ProjectsComponent() {
   return (
     <div>
-      <TitleComponent textContent={"My Projects"}></TitleComponent>
+      <TitleComponent
+        className="projects-title"
+        textContent={"My Projects"}
+        classTitle="projects-title"
+      ></TitleComponent>
     </div>
   );
 }
