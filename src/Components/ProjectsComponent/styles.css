@@ -1,3 +1,50 @@
 .projects-title::before {
-  width: 105px;
+  width: 125px;
+  left: 66%;
+}
+
+.projects--thumbnails__container-outer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 4.6rem;
+  column-gap: 24px;
+}
+
+.project_1-thumbnail img {
+  max-width: 100%;
+}
+
+.project_2-thumbnail {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/modals/logistics-deal.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 12%;
+  padding-bottom: 12%;
+  /* margin-left: -20px; */
+}
+.project_2-thumbnail img {
+  max-width: 80%;
+}
+
+.project_2-thumbnail img {
+  padding-top: 60px;
+  /* transform: scale(1.8) translateX(-20px) translateY(-20px); */
+}
+
+.project_2-thumbnail--wrapper {
+  background: linear-gradient(
+    to top,
+    rgba(128, 128, 128, 0.685),
+    rgb(77, 77, 77)
+  );
+}
+
+.project_1-thumbnail--wrapper,
+.project_2-thumbnail--wrapper {
+  border-radius: 20px;
+  overflow: hidden;
 }
