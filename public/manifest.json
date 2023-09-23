@@ -1,5 +1,5 @@
 {
-  "name": "Ildi Dvorani - Portfolio Website",
+  "name": "portfolio-website",
   "short_name": "Ildi's Portfolio",
   "start_url": "/",
   "id": "/",
@@ -11,7 +11,14 @@
     {
       "src": "/assets/icons/ildidev-logo_144x144.png",
       "sizes": "144x144",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/ildidev-logo_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

@@ -29,13 +29,21 @@ function AboutComponent() {
           </div>
         </div>
         <div className={`about-me__img-container part1`}>
-          <img className="about-me__img" src={DesignImg}></img>
+          <img
+            className="about-me__img"
+            src={DesignImg}
+            alt="Web design image graphic"
+          ></img>
         </div>
       </div>
 
       <div className="about-me__part2">
         <div className={`about-me__img-container part2`}>
-          <img className="about-me__img--2" src={DevelopmentImg}></img>
+          <img
+            className="about-me__img--2"
+            src={DevelopmentImg}
+            alt="web development image graphic"
+          ></img>
         </div>
         <div className="about-me__text-container">
           <h3 className="about-me__part2--header">Back-End Development</h3>
