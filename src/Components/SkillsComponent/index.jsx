@@ -51,10 +51,12 @@ function SkillsComponent() {
                 <img src={HTMLLogo}></img>
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Doloribus expedita quaerat facilis aperiam quos beatae vero
-                natus amet reiciendis harum, fuga voluptas vel repellat
-                laboriosam nemo dignissimos inventore obcaecati? Veritatis.
+                Proficient in crafting well-structured HTML5 optimized for SEO,
+                ensuring both visibility in search engines and compliance with
+                AODA/WCAG 2.0 standards for accessibility. Experienced in
+                utilizing React/JSX for dynamic web applications, integrating a
+                variety of template engines such as Mustache, EJS, and Pug as
+                well as developing responsive HTML Emails.
               </p>
             </div>
           </Tilt>

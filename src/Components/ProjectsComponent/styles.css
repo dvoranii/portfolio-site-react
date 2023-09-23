@@ -6,7 +6,7 @@
 .projects--thumbnails__container-outer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-top: 4.6rem;
+  padding: 46px 20px;
   column-gap: 24px;
 }
 
@@ -17,22 +17,15 @@
 .project_2-thumbnail {
   display: flex;
   justify-content: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.13), rgba(0, 0, 0, 0.5)),
     url("/assets/modals/logistics-deal.jpg");
-
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 12%;
-  padding-bottom: 12%;
-  /* margin-left: -20px; */
+  padding-top: 17%;
+  padding-bottom: 17%;
 }
 .project_2-thumbnail img {
   max-width: 80%;
-}
-
-.project_2-thumbnail img {
-  padding-top: 60px;
-  /* transform: scale(1.8) translateX(-20px) translateY(-20px); */
 }
 
 .project_2-thumbnail--wrapper {
@@ -47,4 +40,41 @@
 .project_2-thumbnail--wrapper {
   border-radius: 20px;
   overflow: hidden;
+  background-color: #1c1b20;
+  position: relative;
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  top: -100%;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.411);
+  transition: all 200ms ease;
+}
+
+.overlay--inner {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay--inner p {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: all 250ms ease;
+}
+
+.overlay--inner p:hover {
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.562);
+}
+
+.project_2-thumbnail--wrapper:hover .thumbnail-overlay,
+.project_1-thumbnail--wrapper:hover .thumbnail-overlay {
+  transform: translateY(100%);
+  cursor: pointer;
 }
