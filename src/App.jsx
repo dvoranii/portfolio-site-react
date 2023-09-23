@@ -17,7 +17,8 @@ function App() {
             content="Ildi Dvorani: Experienced Full Stack JavaScript Developer specialized in React. Explore my portfolio to 
             view my latest projects, skills, and let's collaborate to bring your vision to life."
           />
-          <meta name="theme-color" content="#3498db"></meta>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#3498db" />
           <link rel="manifest" href="/manifest.json" />
           <link
             rel="icon"
