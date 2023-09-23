@@ -42,7 +42,12 @@ function NavComponent() {
     <div className={`nav--wrapper ${isFixed || isMobileView ? "fixed" : ""}`}>
       <nav className="nav">
         <div className="nav--logo__wrapper">
-          <img className="nav--logo" src={HeaderLogo} alt="logo"></img>
+          <img
+            className="nav--logo"
+            loading="lazy"
+            src={HeaderLogo}
+            alt="logo"
+          ></img>
         </div>
         <ul className={navActive ? "nav--list nav-active" : "nav--list"}>
           <li>About Me</li>

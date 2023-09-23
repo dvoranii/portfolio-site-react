@@ -20,7 +20,11 @@ function SkillsComponent() {
           <Tilt className="tilt">
             <div className={`skill-card skill--1`}>
               <div className={`skill-card--img-wrapper`}>
-                <img src={JSLogo}></img>
+                <img
+                  src={JSLogo}
+                  loading="lazy"
+                  alt="javascript logo icon"
+                ></img>
               </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -34,7 +38,7 @@ function SkillsComponent() {
           <Tilt className="tilt">
             <div className={`skill-card skill--2`}>
               <div className={`skill-card--img-wrapper`}>
-                <img src={CSSLogo}></img>
+                <img src={CSSLogo} loading="lazy" alt="css logo icon"></img>
               </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -48,7 +52,7 @@ function SkillsComponent() {
           <Tilt className="tilt">
             <div className={`skill-card skill--3`}>
               <div className={`skill-card--img-wrapper`}>
-                <img src={HTMLLogo}></img>
+                <img src={HTMLLogo} loading="lazy" alt="html logo icon"></img>
               </div>
               <p>
                 Proficient in crafting well-structured HTML5 optimized for SEO,
@@ -64,7 +68,7 @@ function SkillsComponent() {
           <Tilt className="tilt">
             <div className={`skill-card skill--4`}>
               <div className={`skill-card--img-wrapper nodeLogo`}>
-                <img src={NodeLogo}></img>
+                <img src={NodeLogo} loading="lazy" alt="node logo icon"></img>
               </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -78,7 +82,7 @@ function SkillsComponent() {
           <Tilt className="tilt">
             <div className={`skill-card skill--5`}>
               <div className={`skill-card--img-wrapper reactLogo`}>
-                <img src={ReactLogo}></img>
+                <img src={ReactLogo} loading="lazy" alt="react logo icon"></img>
               </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -92,7 +96,11 @@ function SkillsComponent() {
           <Tilt className="tilt">
             <div className={`skill-card skill--6`}>
               <div className={`skill-card--img-wrapper nextLogo`}>
-                <img src={NextLogo}></img>
+                <img
+                  src={NextLogo}
+                  loading="lazy"
+                  alt="next js logo icon"
+                ></img>
               </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.

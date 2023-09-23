@@ -20,7 +20,11 @@ function ProjectsComponent() {
             </div>
           </div>
           <div className="project_2-thumbnail">
-            <img src={CGLModalThumb} alt="CGL project thumbnail"></img>
+            <img
+              src={CGLModalThumb}
+              loading="lazy"
+              alt="CGL project thumbnail"
+            ></img>
           </div>
         </div>
         <div className="project_1-thumbnail--wrapper">
@@ -30,7 +34,11 @@ function ProjectsComponent() {
             </div>
           </div>
           <div className="project_1-thumbnail">
-            <img src={OGModalThumb} alt="og creations project thumbnail"></img>
+            <img
+              src={OGModalThumb}
+              loading="lazy"
+              alt="og creations project thumbnail"
+            ></img>
           </div>
         </div>
       </div>

@@ -59,6 +59,8 @@ function HeroComponent() {
         <div className="hero--img__wrapper--outer">
           <div className="hero--img__wrapper--inner">
             <img
+              loading="lazy"
+              alt="laptop graphical design image"
               className={`laptop-img ${isLoaded ? "loaded" : ""}`}
               src={LaptopHeader}
               onLoad={() => setIsLoaded(true)}

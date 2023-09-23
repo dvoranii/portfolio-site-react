@@ -32,6 +32,7 @@ function AboutComponent() {
           <img
             className="about-me__img"
             src={DesignImg}
+            loading="lazy"
             alt="Web design image graphic"
           ></img>
         </div>
@@ -42,6 +43,7 @@ function AboutComponent() {
           <img
             className="about-me__img--2"
             src={DevelopmentImg}
+            loading="lazy"
             alt="web development image graphic"
           ></img>
         </div>

@@ -17,6 +17,7 @@ function NavSocialsComponent() {
               alt="linkedin logo"
               className="social--logo linkedin"
               src={LinkedinLogo}
+              loading="lazy"
             ></img>
           </a>
         </li>
@@ -30,6 +31,7 @@ function NavSocialsComponent() {
               className="social--logo github"
               alt="github logo"
               src={GithubLogo}
+              loading="lazy"
             ></img>
           </a>
         </li>
@@ -43,6 +45,7 @@ function NavSocialsComponent() {
               alt="codepen logo"
               className="social--logo codepen"
               src={CodepenLogo}
+              loading="lazy"
             ></img>
           </a>
         </li>
