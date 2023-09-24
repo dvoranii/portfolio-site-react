@@ -1,6 +1,6 @@
 .title-container-inner {
   position: relative;
-  border-bottom: 6px solid #1a98ff;
+  border-bottom: 6px solid #0777da;
 }
 
 .title-container-inner::before {
@@ -32,9 +32,3 @@
   z-index: 600;
   text-shadow: 2px 2px 4px #00000046;
 }
-
-/* @media screen and (max-width: 540px) {
-  .title-container {
-    padding-top: 9.6rem;
-  }
-} */

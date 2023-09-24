@@ -1,0 +1,10 @@
+.modal-icon {
+  height: 30px;
+  object-fit: contain; /* keeps the images aspect ratio */
+  object-position: center;
+}
+
+.icons-wrapper-inner {
+  display: flex;
+  gap: 20px;
+}

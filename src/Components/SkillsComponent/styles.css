@@ -35,10 +35,6 @@
   padding-top: 4.8rem;
 }
 
-/* .tilt {
-  width: clamp(200px, 30vw, 300px) !important;
-} */
-
 @media screen and (max-width: 1076px) {
   .skills--wrapper__inner {
     grid-template-columns: repeat(2, 1fr);
@@ -77,7 +73,7 @@
 @media screen and (max-width: 480px) {
   .tilt {
     width: 35vh !important;
-    min-height: 480px;
+    min-height: 500px;
   }
 }
 
