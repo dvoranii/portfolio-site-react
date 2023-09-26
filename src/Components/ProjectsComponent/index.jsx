@@ -4,6 +4,15 @@ import TitleComponent from "../TitleComponent";
 import OGModalThumb from "/assets/modals/banner-img.webp";
 import CGLModalThumb from "/assets/modals/CGL-logo.png";
 import ProjectModalComponent from "../ProjectModalComponent";
+import ImageCarouselComponent from "../ProjectModalComponent/Components/ImageCarouselComponent";
+
+import OGCarouselImg1 from "/assets/modals/carouselImages/OG-gallery-img(1).png";
+import OGCarouselImg2 from "/assets/modals/carouselImages/OG-gallery-img(2).png";
+import OGCarouselImg3 from "/assets/modals/carouselImages/OG-gallery-img(3).png";
+
+import CGLCarouselImg1 from "/assets/modals/carouselImages/CGL-modal-img-01.png";
+import CGLCarouselImg2 from "/assets/modals/carouselImages/CGL-modal-img-02.png";
+import CGLCarouselImg3 from "/assets/modals/carouselImages/CGL-modal-img-03.png";
 
 const projects = {
   project_1: {
@@ -13,18 +22,32 @@ const projects = {
     techStack: [
       "Angular",
       "Typescript",
-      "HTML",
       "CSS",
-      "FB",
+      "HTML",
+      "Firebase",
       "Node",
       "Photoshop",
     ],
-    galleryImages: [],
+    galleryImages: [OGCarouselImg1, OGCarouselImg2, OGCarouselImg3],
+    githubURL: "https://github.com/dvoranii/og-creations-website",
+    liveDemoURL: "https://www.ogcreations.ca/",
   },
   project_2: {
+    id: 2,
+    title: "Canadian Global Logistics Inc. Website",
     thumbnail: CGLModalThumb,
-    techStack: ["JS", "THREE", "Node", "CSS", "HTML", "FB", "Photoshop"],
-    galleryImages: [],
+    techStack: [
+      "JavaScript",
+      "THREE",
+      "CSS",
+      "HTML",
+      "Firebase",
+      "Node",
+      "Photoshop",
+    ],
+    galleryImages: [CGLCarouselImg1, CGLCarouselImg2, CGLCarouselImg3],
+    githubURL: "https://github.com/dvoranii/reCaptchaV2",
+    liveDemoURL: "https://cglwebsite.vercel.app/",
   },
 };
 
@@ -46,7 +69,10 @@ function ProjectsComponent() {
       ></TitleComponent>
 
       <div className="projects--thumbnails__container-outer">
-        <div className="project_2-thumbnail--wrapper">
+        <div
+          className="project_2-thumbnail--wrapper"
+          onClick={() => handleThumbnailClick(projects.project_2)}
+        >
           <div
             className="thumbnail-overlay"
             onClick={() => handleThumbnailClick(projects.project_2)}
@@ -63,7 +89,10 @@ function ProjectsComponent() {
             ></img>
           </div>
         </div>
-        <div className="project_1-thumbnail--wrapper">
+        <div
+          className="project_1-thumbnail--wrapper"
+          onClick={() => handleThumbnailClick(projects.project_1)}
+        >
           <div
             className="thumbnail-overlay"
             onClick={() => handleThumbnailClick(projects.project_1)}
@@ -88,8 +117,17 @@ function ProjectsComponent() {
           setCurrentProject(null);
         }}
         techStack={currentProject?.techStack}
+        id={currentProject?.id}
+        title={currentProject?.title}
+        gitRepo={currentProject?.githubURL}
+        siteURL={currentProject?.liveDemoURL}
       >
-        {/* this is where the carousel will go  */}
+        {currentProject && (
+          <ImageCarouselComponent
+            className="carousel"
+            galleryImages={currentProject.galleryImages}
+          />
+        )}
       </ProjectModalComponent>
     </div>
   );

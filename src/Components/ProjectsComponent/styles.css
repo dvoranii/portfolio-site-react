@@ -89,3 +89,11 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 780px) {
+  .projects--thumbnails__container-outer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 2.4rem;
+  }
+}

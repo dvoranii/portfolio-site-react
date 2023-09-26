@@ -79,7 +79,7 @@
 
 @media screen and (max-width: 380px) {
   .tilt {
-    width: 42vh !important;
+    width: 36vh !important;
   }
 
   .skill-card--img-wrapper img {
@@ -88,5 +88,9 @@
 
   .skill-card--img-wrapper.nodeLogo img {
     padding-bottom: 12px;
+  }
+
+  .skills--wrapper__inner {
+    padding: 0px 10px;
   }
 }
