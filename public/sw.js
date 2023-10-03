@@ -16,7 +16,7 @@ workbox.precaching.precacheAndRoute(self.__WB_MANIFEST || []);
 
 // eslint-disable-next-line no-undef
 workbox.routing.registerRoute(
-  /\.(?:png|gif|jpg|jpeg|svg)$/,
+  /\.(?:png|gif|jpg|jpeg|svg|webp)$/,
   // eslint-disable-next-line no-undef
   new workbox.strategies.CacheFirst({
     cacheName: "images",

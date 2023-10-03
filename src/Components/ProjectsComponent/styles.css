@@ -6,77 +6,9 @@
 .projects--thumbnails__container-outer {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   padding: 46px 20px;
   column-gap: 24px;
-}
-
-.project_1-thumbnail img {
-  max-width: 100%;
-}
-
-.project_2-thumbnail {
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.13), rgba(0, 0, 0, 0.5)),
-    url("/assets/modals/logistics-deal.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-top: 17%;
-  padding-bottom: 17%;
-}
-.project_2-thumbnail img {
-  max-width: 80%;
-}
-
-.project_2-thumbnail--wrapper {
-  background: linear-gradient(
-    to top,
-    rgba(128, 128, 128, 0.685),
-    rgb(77, 77, 77)
-  );
-}
-
-.project_1-thumbnail--wrapper,
-.project_2-thumbnail--wrapper {
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: #1c1b20;
-  position: relative;
-}
-
-.thumbnail-overlay {
-  position: absolute;
-  top: -100%;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.411);
-  transition: all 200ms ease;
-}
-
-.overlay--inner {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.overlay--inner p {
-  color: white;
-  text-transform: uppercase;
-  font-family: "Roboto";
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  transition: all 250ms ease;
-}
-
-.overlay--inner p:hover {
-  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.562);
-}
-
-.project_2-thumbnail--wrapper:hover .thumbnail-overlay,
-.project_1-thumbnail--wrapper:hover .thumbnail-overlay {
-  transform: translateY(100%);
-  cursor: pointer;
 }
 
 /* modal */
@@ -90,10 +22,112 @@
   align-items: center;
 }
 
+/* GRID */
+
+.sub-grid {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 0.25fr 0.5fr 0.25fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.project_3-thumbnail--wrapper {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project_3-thumbnail img {
+  width: 100%;
+}
+/* .project_3-thumbnail {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.13), rgba(0, 0, 0, 0.5)),
+    url(/assets/modals/bg-me.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 20%;
+} */
+
+.project_4-thumbnail--wrapper {
+  width: 100%;
+  height: fit-content;
+  background: linear-gradient(to bottom, #e5e8ee, #9c627b);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project_5-thumbnail--wrapper {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(to bottom, #0777da, #03549b);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.project_2-thumbnail img,
+.project_3-thumbnail img,
+.project_4-thumbnail img,
+.project_5-thumbnail img {
+  max-width: 100%;
+}
+
+.project_5-thumbnail {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  padding: 10% 0%;
+}
+.project_5-thumbnail img {
+  width: 40%;
+}
+
+.project_2-thumbnail--wrapper:hover .thumbnail-overlay,
+.project_1-thumbnail--wrapper:hover .thumbnail-overlay,
+.project_3-thumbnail--wrapper:hover .thumbnail-overlay,
+.project_4-thumbnail--wrapper:hover .thumbnail-overlay,
+.project_5-thumbnail--wrapper:hover .thumbnail-overlay {
+  transform: translateY(100%);
+  cursor: pointer;
+}
+
 @media screen and (max-width: 780px) {
   .projects--thumbnails__container-outer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     row-gap: 2.4rem;
+    column-gap: 0;
+  }
+
+  .project_3-thumbnail {
+    max-height: 50vw;
+  }
+
+  .project_3-thumbnail img {
+    margin-top: -50px;
+  }
+
+  .sub-grid {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+    row-gap: 2.4rem;
+  }
+
+  .project_2-thumbnail--wrapper {
+    grid-row: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .projects--thumbnails__container-outer {
+    padding-top: 1.2rem;
   }
 }

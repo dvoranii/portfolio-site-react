@@ -9,16 +9,26 @@ function ModalButtonsComponent({ gitRepo, siteURL }) {
       <div className="btns--wrapper__outer">
         <div className="btns--wrapper__inner">
           <div className={`btn--1__wrapper--inner`}>
-            <a href={gitRepo} target="_blank" rel="noopener noreferrer">
-              <button>
+            <a
+              href={gitRepo === "N/A" ? null : gitRepo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={gitRepo === "N/A" ? "disabled-button" : ""}
+            >
+              <button disabled={gitRepo === "N/A"}>
                 <img src={GithubLogo}></img>Repo
               </button>
             </a>
           </div>
 
           <div className={`btn--2__wrapper--inner`}>
-            <a href={siteURL} target="_blank" rel="noopener noreferrer">
-              <button>
+            <a
+              href={siteURL === "N/A" ? null : siteURL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={siteURL === "N/A" ? "disabled-button" : ""}
+            >
+              <button disabled={siteURL === "N/A"}>
                 <img src={WebsiteIcon}></img>
                 Live Site
               </button>

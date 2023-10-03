@@ -51,6 +51,13 @@
   text-decoration: none;
 }
 
+.disabled-button {
+  pointer-events: none;
+}
+
+.disabled-button img {
+  opacity: 0.3;
+}
 @media screen and (max-width: 690px) {
   .modal-info--wrapper p {
     font-size: 12px;

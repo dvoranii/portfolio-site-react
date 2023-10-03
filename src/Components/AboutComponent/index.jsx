@@ -16,22 +16,20 @@ function AboutComponent() {
         </div>
         <div className={`about-me__intro--text-wrapper`}>
           <p>
-            I&apos;ve always believed that Full Stack developers make some of
-            the best Front End developers, and vice versa. In the same spirit,
-            I&apos;ve honed my skills both in front-end technologies, as well as
-            back-end and other related web tools, enabling me to efficiently
-            plan, architect, and build robust web applications tailored to
-            specific needs. I&apos;m proficient in JavaScript, React, Next.js,
-            Node.js, CSS, and HTML, and well-versed in tools like Adobe
-            Photoshop, SQL, GIT, and AWS. My breadth of skills allows me to
-            grasp the vast landscape of web development and helps reinforce my
-            approach to projects. I enjoy looking at the big picture of web
-            applications, understanding how all the moving parts connect from
-            user to server and back. At the same time, I maintain a deep passion
-            for the intricate details and nuances involved in working with
-            specific languages and technologies, especially when tackling
-            day-to-day challenges, delving into debugging sessions, and
-            diagnosing development issues within a team environment.
+            I&apos;ve always held the belief that Full Stack developers can make
+            some of the best Front End developers, and vice versa. With that in
+            mind, I&apos;ve honed my skills in both front-end and back-end
+            technologies, enabling me to efficiently plan, architect, and build
+            robust web applications tailored to specific requirements. I&apos;m
+            proficient in JavaScript, React, Next.js, Node.js, CSS, and HTML and
+            I&apos;m also well-versed in tools like Adobe Photoshop, SQL, GIT,
+            and AWS. My breadth of skills allows me to grasp the wide landscape
+            of web development, reinforcing my approach to both planning and
+            executing projects. I enjoy looking at the big picture of web
+            applications and understanding how all the moving parts connect from
+            user to server, and back. I also maintain a deep passion for the
+            intricate details and nuances involved in working with specific
+            languages and technologies.
           </p>
         </div>
       </div>

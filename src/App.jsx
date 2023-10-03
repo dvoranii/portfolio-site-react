@@ -5,7 +5,8 @@ import HeroComponent from "./Components/HeroComponent";
 import AboutComponent from "./Components/AboutComponent";
 import SkillsComponent from "./Components/SkillsComponent";
 import ProjectsComponent from "./Components/ProjectsComponent";
-
+import CompaniesComponent from "./Components/CompaniesComponent";
+import ContactComponent from "./Components/ContactComponent";
 function App() {
   return (
     <>
@@ -31,7 +32,9 @@ function App() {
       <HeroComponent></HeroComponent>
       <AboutComponent></AboutComponent>
       <SkillsComponent></SkillsComponent>
+      <CompaniesComponent></CompaniesComponent>
       <ProjectsComponent></ProjectsComponent>
+      <ContactComponent></ContactComponent>
     </>
   );
 }

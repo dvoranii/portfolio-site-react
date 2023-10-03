@@ -1,0 +1,12 @@
+.wrapper {
+  width: 60px;
+  position: absolute;
+  top: 0px;
+}
+
+.checkmark {
+  stroke: rgb(0, 214, 0);
+  stroke-dashoffset: 745.74853515625;
+  stroke-dasharray: 745.74853515625;
+  animation: dash 2s ease-out forwards infinite;
+}

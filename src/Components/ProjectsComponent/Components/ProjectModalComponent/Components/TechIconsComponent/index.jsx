@@ -12,6 +12,7 @@ const ICON_MAP = {
   Firebase: "/assets/skillIcons/firebase-modal.png",
   Photoshop: "/assets/skillIcons/Adobe-Photoshop-Logo.png",
   THREE: "/assets/skillIcons/Three.js_Icon.svg",
+  Vite: "/assets/skillIcons/Vitejs-logo.svg",
 };
 
 // eslint-disable-next-line react/prop-types
