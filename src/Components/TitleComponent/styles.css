@@ -33,12 +33,6 @@
   text-shadow: 2px 2px 4px #00000046;
 }
 
-/* @media screen and (min-width: 912px) {
-  .title-container {
-    padding-top: 0rem;
-  }
-} */
-
 @media screen and (max-width: 912px) {
   .title-container {
     padding-top: 2.4rem;

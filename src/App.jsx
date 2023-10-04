@@ -7,6 +7,7 @@ import SkillsComponent from "./Components/SkillsComponent";
 import ProjectsComponent from "./Components/ProjectsComponent";
 import CompaniesComponent from "./Components/CompaniesComponent";
 import ContactComponent from "./Components/ContactComponent";
+import FooterComponent from "./Components/FooterComponent";
 function App() {
   return (
     <>
@@ -35,6 +36,7 @@ function App() {
       <CompaniesComponent></CompaniesComponent>
       <ProjectsComponent></ProjectsComponent>
       <ContactComponent></ContactComponent>
+      <FooterComponent></FooterComponent>
     </>
   );
 }

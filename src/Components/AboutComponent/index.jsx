@@ -47,7 +47,7 @@ function AboutComponent() {
               <div className="dash"></div>
             </div>
             <div className="see-more--text-wrapper">
-              <a className="see-more--link" href="#section1">
+              <a className="see-more--link" href="#projects-section">
                 See more
               </a>
             </div>
@@ -85,7 +85,7 @@ function AboutComponent() {
               <div className="dash"></div>
             </div>
             <div className="see-more--text-wrapper">
-              <a className="see-more--link" href="#section1">
+              <a className="see-more--link" href="#projects-section">
                 See more
               </a>
             </div>

@@ -44,7 +44,7 @@ function HeroComponent() {
           <h2>{jobTitle}</h2>
           <p>Welcome to my portfolio website...</p>
           <div className="hero-btns">
-            <a href="#projects">
+            <a href="#projects-section">
               <button className={`custom-btn btn-3`} id="projects-btn">
                 <span>Projects</span>
               </button>

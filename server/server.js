@@ -89,7 +89,6 @@ app.post("/submitForm", async (req, res) => {
         to: email,
         subject: "Thank you for your interest!",
         text: "We have received your form submission. Thanks.",
-
         // might need to spin back up my old email
       };
       transporter.sendMail(mailOptionsUser);
