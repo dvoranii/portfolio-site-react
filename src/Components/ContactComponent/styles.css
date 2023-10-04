@@ -49,7 +49,7 @@
 .input-row input {
   width: 100%;
   padding: 10px;
-  border: 2px solid #f8f8f8;
+  border: 1px solid #f8f8f8;
   border-radius: 4px;
   background-color: #f1f1f1;
   color: #fefefe;
@@ -158,15 +158,20 @@
   margin-top: 3px;
 }
 
-@keyframes dash {
-  0% {
-    stroke-dashoffset: 745.74853515625;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
+.loading-wrapper,
+.check-wrapper {
+  width: 65px;
+  height: 65px;
+  /* width: 100% */
 }
 
+.message-sent {
+  font-size: 10px;
+  color: #fff;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 4px;
+}
 @media screen and (max-width: 527px) {
   .error-message {
     font-size: 10px;

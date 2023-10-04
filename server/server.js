@@ -22,7 +22,7 @@ const keyPath = path.join(
 
 const app = express();
 app.use(cors());
-app.useBody;
+app.use(bodyParser());
 
 const firestore = new Firestore({
   projectId: "ildidev-form",
@@ -63,15 +63,14 @@ app.post("/submitForm", async (req, res) => {
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        // PUT THIS IN SECRETS .ENV FILE !!!
         user: process.env.APP_USER,
         pass: process.env.APP_PASSWORD,
       },
     });
 
     let mailOptions = {
-      from: "ildidvorani@gmail.com",
-      to: "ildidvorani@gmail.com",
+      from: process.env.APP_USER,
+      to: process.env.APP_USER,
       subject: "New Form Submission",
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
@@ -86,10 +85,12 @@ app.post("/submitForm", async (req, res) => {
 
     setTimeout(() => {
       let mailOptionsUser = {
-        from: "ildidvorani@gmail.com",
+        from: process.env.APP_USER,
         to: email,
         subject: "Thank you for your interest!",
         text: "We have received your form submission. Thanks.",
+
+        // might need to spin back up my old email
       };
       transporter.sendMail(mailOptionsUser);
     }, 6000);

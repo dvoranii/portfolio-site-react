@@ -1,6 +1,7 @@
 import "./styles.css";
 import { useState, useRef } from "react";
 import CheckmarkSVG from "./Components/CheckmarkSVG";
+import LoadingSpinnerSVG from "./LoadingSpinnerSVG";
 
 function ContactComponent() {
   const [name, setName] = useState("");
@@ -11,6 +12,9 @@ function ContactComponent() {
 
   const nameInputRef = useRef(null);
   const emailInputRef = useRef(null);
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const validateFormInput = () => {
     const isNameValid = name && /^[A-Za-z\s]+$/.test(name);
@@ -31,35 +35,48 @@ function ContactComponent() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!validateFormInput()) {
+    const isValid = validateFormInput();
+
+    if (!isValid) {
       console.log("Error submitting form");
       return;
     }
 
-    try {
-      const response = await fetch("http://localhost:5000/submitForm", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
+    setIsLoading(true);
 
-      const result = await response.json();
+    setTimeout(async () => {
+      try {
+        const response = await fetch("http://localhost:5000/submitForm", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, message }),
+        });
 
-      if (result.status === "success") {
-        setName("");
-        setEmail("");
-        setMessage("");
-        alert("Form submitted successfully!");
-      } else {
-        // Handle error
-        // going to change this with updates to the UI
-        alert("Error submitting the form. Please try again.");
+        const result = await response.json();
+
+        if (result.status === "success") {
+          setIsSuccess(true);
+
+          setTimeout(() => {
+            setIsSuccess(false);
+            setName("");
+            setEmail("");
+            setMessage("");
+            // alert("Form submitted successfully!");
+          }, 2000);
+        } else {
+          setIsLoading(false);
+          console.log("Error submitting the form. Please try again.");
+        }
+      } catch {
+        // update the DOM here
+        console.log("An error occurred. Please try again later.");
+      } finally {
+        setIsLoading(false);
       }
-    } catch {
-      alert("An error occurred. Please try again later.");
-    }
+    }, 2000);
   };
   return (
     <div className={`contact-section__outer`}>
@@ -118,20 +135,36 @@ function ContactComponent() {
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
             <div className="button-row">
-              <button className={`send--btn`} type="submit">
-                Send
-              </button>
+              {!isLoading && !isSuccess && (
+                <button
+                  className={`send--btn`}
+                  type="submit"
+                  disabled={isLoading || isSuccess}
+                  style={{
+                    visibility: isLoading || isSuccess ? "hidden" : "visible",
+                  }}
+                >
+                  Send
+                </button>
+              )}
+              {isLoading && (
+                <div className="loading-wrapper">
+                  <LoadingSpinnerSVG />
+                </div>
+              )}
+              {!isLoading && isSuccess && (
+                <div className="check-wrapper">
+                  <CheckmarkSVG />
+                  <p className="message-sent">Sent!</p>
+                </div>
+              )}
+
               <span className={`outlook-span`}>
                 Have Outlook?<br></br> Simply click{" "}
                 <a className={`here-link`} href="#">
                   here
                 </a>
               </span>
-              <div className="check-wrapper">
-                <div className="wrapper">
-                  <CheckmarkSVG></CheckmarkSVG>
-                </div>
-              </div>
             </div>
           </form>
         </div>
