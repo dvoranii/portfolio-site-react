@@ -30,22 +30,6 @@
   filter: blur(150px);
 }
 
-/* .about-me__part1::after {
-  content: "";
-  width: 32.7%;
-  padding-bottom: 20%;
-  background-image: linear-gradient(
-    209.25deg,
-    #2aa3ff00 13.05%,
-    #2fa1ff 88.99%
-  );
-  box-shadow: 0px 20px 80px #00e5ff56;
-  z-index: -1;
-  position: absolute;
-  left: 39%;
-  bottom: -40%;
-  clip-path: polygon(88% 0, 100% 11%, 11% 100%, 0 88%);
-} */
 .about-me__part1--header,
 .about-me__part2--header {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -155,6 +139,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  width: fit-content;
 }
 
 .dash {
@@ -181,7 +166,7 @@
   padding-bottom: 4.2rem;
   display: grid;
   grid-template-columns: 0.5fr 1fr;
-
+  position: relative;
   gap: 2.4rem;
 }
 
@@ -203,6 +188,7 @@
   background: #b8b8ae;
   box-shadow: 4px 4px 32px #1a98ff44;
   position: relative; /* This will ensure the img inside will be positioned based on this container */
+  align-self: center;
 }
 
 .about-me__intro--text-wrapper {
@@ -211,13 +197,142 @@
   /* border-bottom: 4px solid lavender; */
 }
 
-.about-me__intro--text-wrapper::before {
+.about-me__part1--list,
+.about-me__part2--list {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  line-height: 1.25;
+  padding-inline-start: 2.4rem;
+  padding-bottom: 1.2rem;
+}
+
+.about-me__part1--list li,
+.about-me__part2--list li {
+  padding-top: 4px;
+}
+.about-me__part1--list li::marker,
+.about-me__part2--list li::marker {
+  color: #2780de;
+}
+
+/* WAVING EMOJI */
+
+.wave-container {
+  position: absolute;
+  margin-left: -60px;
+  margin-top: 180px;
+  font-size: 64px;
+  transform: scale(0);
+}
+
+.wave-container.visible {
+  animation: combinedAnimation 5s forwards;
+}
+
+.wave-container span {
+  font-size: 64px;
+}
+
+.hi-bubble-container {
+  position: absolute;
+  left: 223px;
+  top: 70px;
+}
+
+.hi-bubble-container img {
+  max-width: 125px;
+  transform: scale(0);
+  opacity: 0;
+  transform-origin: bottom left;
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-delay: 0.25s;
+}
+
+.hi-bubble-container.visible img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.skills-boxes {
+  display: grid;
+  column-gap: 1.2rem;
+
+  row-gap: 1.2rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
+  text-align: center;
+  height: fit-content;
+  max-width: 80%;
+}
+
+.skills-boxes .skill {
+  font-size: clamp(12px, 3vw, 14px);
+  width: fit-content;
+  border: 1px solid grey;
+  padding: 8px 16px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.39);
+  font-family: "Montserrat";
+  transition: all 250ms ease;
+}
+
+.skills-boxes .skill:hover {
+  transform: scale(1.025) translateY(-4px);
+  box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.301);
+  cursor: default;
+}
+
+.skills-boxes::before {
   content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 4px;
   background: linear-gradient(to right, lavender 20%, #2780de);
+}
+
+@keyframes combinedAnimation {
+  0% {
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1) rotate(14deg);
+  }
+  20% {
+    transform: scale(1) rotate(-8deg);
+  }
+  25% {
+    transform: scale(1) rotate(14deg);
+  }
+  30% {
+    transform: scale(1) rotate(-4deg);
+  }
+  35% {
+    transform: scale(1) rotate(10deg);
+  }
+  40% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.wave-container.visible span {
+  animation: waveAnimation 2s infinite;
+}
+
+.buttons-wrapper {
+  position: absolute;
+  bottom: 16%;
+  left: 3%;
+}
+
+.btns--wrapper__inner.about {
+  gap: 24px;
+  margin-bottom: -24px;
+  margin-left: -12px;
 }
 
 @media screen and (max-width: 1200px) {

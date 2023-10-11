@@ -45,20 +45,11 @@
 .project_3-thumbnail img {
   width: 100%;
 }
-/* .project_3-thumbnail {
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.13), rgba(0, 0, 0, 0.5)),
-    url(/assets/modals/bg-me.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-top: 20%;
-} */
 
 .project_4-thumbnail--wrapper {
   width: 100%;
   height: fit-content;
-  background: linear-gradient(to bottom, #e5e8ee, #9c627b);
+  background: linear-gradient(to bottom, #e5e8ee, #51555b);
   border-radius: 20px;
   overflow: hidden;
   position: relative;
@@ -129,5 +120,13 @@
 @media screen and (max-width: 480px) {
   .projects--thumbnails__container-outer {
     padding-top: 1.2rem;
+  }
+
+  #projects-section {
+    padding-top: 3.6rem;
+  }
+
+  .title-container {
+    padding-top: 0;
   }
 }

@@ -4,7 +4,6 @@
 
 .btns--wrapper__inner {
   display: flex;
-
   align-items: center;
   width: 100%;
 }
@@ -44,7 +43,12 @@
 
 .btn--1__wrapper--inner button,
 .btn--2__wrapper--inner button {
-  width: 80%;
+  width: 85%;
+}
+
+.btn--1__wrapper--inner.about button,
+.btn--2__wrapper--inner.about button {
+  width: 100%;
 }
 
 .btns--wrapper__inner a {

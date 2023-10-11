@@ -1,0 +1,21 @@
+.ripped-paper-bg {
+  width: 100%;
+}
+
+.coming-soon--wrapper__outer {
+  position: relative;
+}
+
+.title-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+}
+
+.title-wrapper h2 {
+  font-size: 42px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.521);
+}

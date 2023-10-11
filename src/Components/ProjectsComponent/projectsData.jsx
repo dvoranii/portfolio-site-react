@@ -2,19 +2,25 @@ import OGCarouselImg1 from "/assets/modals/carouselImages/OG-gallery-img(1).png"
 import OGCarouselImg2 from "/assets/modals/carouselImages/OG-gallery-img(2).png";
 import OGCarouselImg3 from "/assets/modals/carouselImages/OG-gallery-img(3).png";
 
-import CGLCarouselImg1 from "/assets/modals/carouselImages/CGL-modal-img-01.png";
+// import CGLCarouselImg1 from "/assets/modals/carouselImages/CGL-modal-img-01.png";
+import CGLCarouselThumb from "/assets/modals/carouselImages/cgl-carousel-thumb.png";
 import CGLCarouselImg2 from "/assets/modals/carouselImages/CGL-modal-img-02.png";
 import CGLCarouselImg3 from "/assets/modals/carouselImages/CGL-modal-img-03.png";
+
 import OGModalThumb from "/assets/modals/banner-img.webp";
+import OGCarouselThumb from "/assets/modals/carouselImages/og-carousel-thumb.png";
 import CGLModalThumb from "/assets/modals/CGL-logo.png";
 
-import PersonalProjectsThumb from "/assets/peronsal-projects-thumb.png";
+import PersonalProjectsThumb from "/assets/personal-projects-thumb.png";
 import OutpostThumb from "/assets/modals/bg-me.png";
 import MyLogo from "/assets/headerLogo.png";
 
-import OPGalleryImg01 from "/assets/modals/carouselImages/op-bg-01.png";
+// import OPGalleryImg01 from "/assets/modals/carouselImages/op-bg-01.png";
 import OPGalleryImg02 from "/assets/modals/carouselImages/op-bg-02.png";
 import OPGalleryImg03 from "/assets/modals/carouselImages/op-bg-03.png";
+import OPGalleryImg1 from "/assets/modals/carouselImages/op-carousel-thumb.png";
+
+import IldiDevCarouselThumb from "/assets/modals/carouselImages/ildidev-thumb.png";
 
 const projects = {
   project_1: {
@@ -31,7 +37,12 @@ const projects = {
       "Photoshop",
     ],
     projectDescription: "This is the OG Creations site",
-    galleryImages: [OGCarouselImg1, OGCarouselImg2, OGCarouselImg3],
+    galleryImages: [
+      OGCarouselThumb,
+      OGCarouselImg1,
+      OGCarouselImg2,
+      OGCarouselImg3,
+    ],
     githubURL: "https://github.com/dvoranii/og-creations-website",
     liveDemoURL: "https://www.ogcreations.ca/",
   },
@@ -49,7 +60,7 @@ const projects = {
       "Photoshop",
     ],
     projectDescription: "This is the CGL site",
-    galleryImages: [CGLCarouselImg1, CGLCarouselImg2, CGLCarouselImg3],
+    galleryImages: [CGLCarouselThumb, CGLCarouselImg2, CGLCarouselImg3],
     githubURL: "https://github.com/dvoranii/reCaptchaV2",
     liveDemoURL: "https://cglwebsite.vercel.app/",
   },
@@ -59,7 +70,7 @@ const projects = {
     thumbnail: OutpostThumb,
     techStack: ["JavaScript", "HTML", "CSS"],
     projectDescription: "This is the OP site",
-    galleryImages: [OPGalleryImg01, OPGalleryImg02, OPGalleryImg03],
+    galleryImages: [OPGalleryImg1, OPGalleryImg02, OPGalleryImg03],
     githubURL: "N/A",
     liveDemoURL: "https://outpost379.com/",
   },
@@ -85,9 +96,8 @@ const projects = {
       "Firebase",
       "HTML",
       "CSS",
-      "Photoshop",
     ],
-    galleryImages: [],
+    galleryImages: [IldiDevCarouselThumb],
     githubURL: "https://github.com/dvoranii/portfolio-site-react",
     projectDescription: "This is the ildidev site",
     liveDemoURL: "N/A",
