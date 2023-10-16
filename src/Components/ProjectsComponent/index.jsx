@@ -63,6 +63,7 @@ function ProjectsComponent() {
         description={currentProject?.projectDescription}
         gitRepo={currentProject?.githubURL}
         siteURL={currentProject?.liveDemoURL}
+        figmaLink={currentProject?.figmaLink}
       >
         {currentProject && (
           <ImageCarouselComponent

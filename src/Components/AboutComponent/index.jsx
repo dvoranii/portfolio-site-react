@@ -49,7 +49,10 @@ function AboutComponent() {
 
   return (
     <div className={`about--wrapper`} id="about-me--section">
-      <TitleComponent textContent={"About Me"}></TitleComponent>
+      <TitleComponent
+        textContent={"About Me"}
+        classTitle={"about-me-title"}
+      ></TitleComponent>
 
       <div className={`about-me__intro container`}>
         <div className="hi-bubble-container" ref={bubbleRef}>
@@ -81,12 +84,12 @@ function AboutComponent() {
             HTML, complemented by tools like Adobe Photoshop, SQL, GIT, and AWS.
           </p>
           <p>
-            My strengths lie in both technical ability and understanding
-            business needs, allowing me to choose the best strategies and tools
-            to plan for minimal technical debt. Through this approach, I&apos;ve
-            helped businesses explore new digital opportunities, create
-            effective online sales channels, and boost lead generation and
-            revenue.
+            With a solid technical background and a keen grasp of business
+            requirements, I prioritize the most effective strategies and tools
+            to reduce technical debt. This approach has enabled me to
+            collaborate closely with businesses, assisting them in uncovering
+            new digital opportunities, constructing their online sales channels
+            from scratch, and enhancing lead generation and revenue.
           </p>
 
           <p>
@@ -114,9 +117,11 @@ function AboutComponent() {
             <div className={`skill skill-3`}>Adaptable</div>
             <div className={`skill skill-4`}>Organized</div>
             <div className={`skill skill-5`}>Logical</div>
-            <div className={`skill skill-6`}>Open&ndash;minded</div>
+            <div className={`skill skill-6`}>Open&nbsp;minded</div>
             <div className={`skill skill-7`}>Driven</div>
             <div className={`skill skill-8`}>Collaborative</div>
+            <div className={`skill skill-8`}>Resilient</div>
+            <div className={`skill skill-8`}>Proactive</div>
           </div>
         </div>
       </div>

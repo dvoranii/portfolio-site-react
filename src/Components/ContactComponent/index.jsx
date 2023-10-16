@@ -160,8 +160,8 @@ function ContactComponent() {
               )}
 
               <span className={`outlook-span`}>
-                Have Outlook?<br></br> Simply click{" "}
-                <a className={`here-link`} href="#">
+                Have Outlook?<br></br> Simply click&nbsp;
+                <a className={`here-link`} href="mailto:ildidvorani@gmail.com">
                   here
                 </a>
               </span>

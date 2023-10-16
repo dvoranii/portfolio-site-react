@@ -4,6 +4,7 @@ import FooterLogo from "/assets/footer-logo.png";
 import GithubLogo from "/assets/logo-github.svg";
 import LinkedInLogo from "/assets/logo-linkedin.svg";
 import CodepenLogo from "/assets/logo-codepen.svg";
+
 function FooterComponent() {
   return (
     <div className={`footer--wrapper__outer`}>
@@ -23,11 +24,27 @@ function FooterComponent() {
             </div>
 
             <ul className={`footer--nav-list`}>
-              <li>Home</li>
-              <li>About Me</li>
-              <li>My Skills</li>
-              <li>My Projects</li>
-              <li></li>
+              <li>
+                <a className={`footer-link`} href="/#section1">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a className={`footer-link`} href="/#about-me--section">
+                  About Me
+                </a>
+              </li>
+              <li>
+                <a className={`footer-link`} href="/#skills--section">
+                  My Skills
+                </a>
+              </li>
+
+              <li>
+                <a className={`footer-link`} href="/#projects-section">
+                  My Projects
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -39,13 +56,29 @@ function FooterComponent() {
             <ul className={`footer--socials-list`}>
               <li className="footer-gh-list-item">
                 <img className="footer-gh-logo" src={GithubLogo}></img>
-                Github
+                <a
+                  href="https://github.com/dvoranii"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github
+                </a>
               </li>
               <li>
-                <img src={LinkedInLogo}></img>LinkedIn
+                <img src={LinkedInLogo}></img>{" "}
+                <a
+                  href="https://www.linkedin.com/in/ildi-dvorani-a04452210/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
               </li>
               <li>
-                <img src={CodepenLogo}></img>Codepen
+                <img src={CodepenLogo}></img>
+                <a href="https://codepen.io/dvoranii" rel="noopener noreferrer">
+                  Codepen
+                </a>
               </li>
             </ul>
           </div>

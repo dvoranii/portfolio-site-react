@@ -116,6 +116,14 @@
   line-height: 2.75;
 }
 
+.footer-link {
+  color: black;
+}
+
+.footer--socials-list a {
+  color: black;
+}
+
 @media screen and (max-width: 700px) {
   .footer--right-side {
     gap: 24px;

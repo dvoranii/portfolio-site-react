@@ -101,6 +101,8 @@ const projects = {
     githubURL: "https://github.com/dvoranii/portfolio-site-react",
     projectDescription: "This is the ildidev site",
     liveDemoURL: "N/A",
+    figmaLink:
+      "https://www.figma.com/file/LkeTEUFRxx2N3XbVw7KedA/IlDIDEV?type=design&node-id=0-1&mode=design",
   },
 };
 export default projects;

@@ -10,14 +10,17 @@ import ReactLogo from "/assets/skillIcons/react-logo.webp";
 // import NextLogo from "/assets/skillIcons/next-js.svg";
 import GoogleFBLogo from "/assets/skillIcons/firebase-modal.png";
 import PhotoshopLogo from "/assets/skillIcons/Adobe-Photoshop-Logo.png";
-import SQLLogo from "/assets/skillIcons/SQL-LOGO-2.jpg";
+import SQLLogo from "/assets/skillIcons/sql-logo.webp";
 
 import Tilt from "react-vanilla-tilt";
 
 function SkillsComponent() {
   return (
     <div id="skills--section">
-      <TitleComponent textContent={"My Skills"}></TitleComponent>
+      <TitleComponent
+        textContent={"My Skills"}
+        classTitle={"skills-title"}
+      ></TitleComponent>
       <div className={`skills--wrapper__outer`}>
         <div className={`skills--wrapper__inner container`}>
           <Tilt className="tilt">
@@ -33,11 +36,10 @@ function SkillsComponent() {
                 ></img>
               </div>
               <p>
-                Mastering the power and flexibility of JavaScript to build
-                dynamic and interactive web applications. I sometimes also
-                leverage TypeScript for its type safety in some of my
-                applications, enhancing code reliability, maintainability and
-                reducing technical debt.
+                Skilled in utilizing JavaScript to create dynamic and
+                interactive web applications. I also often integrate TypeScript
+                to benefit from its type safety, which boosts code reliability
+                and maintainability
               </p>
             </div>
           </Tilt>
@@ -74,9 +76,11 @@ function SkillsComponent() {
                 ></img>
               </div>
               <p>
-                Using Node.js for server-side logic, incorporating middleware
-                solutions, and building scalable backend services. Ensuring
-                efficient data flows in web applications.
+                Proficient in leveraging Node.js for server-side operations,
+                integrating middleware, and crafting scalable backend services.
+                I also harness Node.js to develop powerful command-line
+                interface (CLI) tools, ensuring smooth and efficient data flows
+                in web applications.
               </p>
             </div>
           </Tilt>
@@ -93,11 +97,10 @@ function SkillsComponent() {
                 ></img>
               </div>
               <p>
-                Harnessing the power of Vite for its lightning-fast build
-                system, making web development more efficient and enjoyable.
-                Capitalizing on its out-of-the-box features for ES modules,
-                enabling better developer experience, and faster hot module
-                replacement.
+                Utilizing Vite for its ultra-fast build system, enhancing web
+                development efficiency. Taking advantage of its native ES module
+                support for an improved developer experience and accelerated hot
+                module replacement.
               </p>
             </div>
           </Tilt>
@@ -115,9 +118,10 @@ function SkillsComponent() {
                 ></img>
               </div>
               <p>
-                Employing CSS to design visually appealing, responsive layouts.
-                With advanced knowledge of CSS, I reduce reliance on JavaScript,
-                optimizing performance and ensuring design consistency.
+                Utilizing advanced CSS techniques to craft visually captivating
+                and responsive designs. I focus on harnessing the full potential
+                of CSS to ensure both optimal performance and consistent design
+                aesthetics.
               </p>
             </div>
           </Tilt>
@@ -144,7 +148,7 @@ function SkillsComponent() {
 
           <Tilt className="tilt">
             <div className={`skill-card skill--9`}>
-              <div className={`skill-card--img-wrapper firebaseLogo`}>
+              <div className={`skill-card--img-wrapper SQLLogo`}>
                 <h4>SQL</h4>
                 <img
                   src={SQLLogo}
