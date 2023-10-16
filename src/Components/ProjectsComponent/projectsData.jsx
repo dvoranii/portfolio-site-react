@@ -36,7 +36,8 @@ const projects = {
       "Node",
       "Photoshop",
     ],
-    projectDescription: "This is the OG Creations site",
+    projectDescription:
+      "I developed and designed the inaugural website for OG Creations Recording Studio, introducing a new digital channel for the studio. The site features a straightforward online sales funnel, contact forms integrated with Google Firebase, a bespoke design tailored to the studio's brand, and a functional UI ensuring user-friendliness across devices. This project highlights my proficiency in both development and design",
     galleryImages: [
       OGCarouselThumb,
       OGCarouselImg1,
@@ -59,7 +60,7 @@ const projects = {
       "Node",
       "Photoshop",
     ],
-    projectDescription: "This is the CGL site",
+    projectDescription: `In the beta phase, currently deployed on Vercel, I spearheaded the development of an interactive website for Canadian Global Logistics. The highlight of the site is an immersive 3D-rendered spinning globe for the hero section. The website boasts advanced styling, user interactivity, and a responsive design. Incorporated are meticulously validated and sanitized forms for quote requests and contacts. This project emphasizes my capability to combine aesthetic design with functionality for a major logistics firm`,
     galleryImages: [CGLCarouselThumb, CGLCarouselImg2, CGLCarouselImg3],
     githubURL: "https://github.com/dvoranii/reCaptchaV2",
     liveDemoURL: "https://cglwebsite.vercel.app/",
@@ -69,7 +70,8 @@ const projects = {
     title: "Outpost 379 Marketing Agency",
     thumbnail: OutpostThumb,
     techStack: ["JavaScript", "HTML", "CSS"],
-    projectDescription: "This is the OP site",
+    projectDescription:
+      "At Outpost379, I collaborated closely with the lead developer, UX designers, and client services team to execute various client projects. Additionally, I played an instrumental role in updating and maintaining the company's primary website, ensuring its responsiveness and user-friendly interface. My involvement in these projects not only underscores my adaptability in team settings but also highlights my ability to create and manage streamlined digital platforms",
     galleryImages: [OPGalleryImg1, OPGalleryImg02, OPGalleryImg03],
     githubURL: "N/A",
     liveDemoURL: "https://outpost379.com/",
@@ -79,7 +81,8 @@ const projects = {
     title: "Personal Projects Website",
     thumbnail: PersonalProjectsThumb,
     techStack: ["React", "Vite", "JavaScript", "CSS", "HTML"],
-    projectDescription: "This is the Personal projects site",
+    projectDescription:
+      "I built a website to host and display my personal projects. This site gives a glimpse into the different projects I've worked on, showing my range as a developer. It's designed to be easy for visitors to navigate and see my work in a clear and straightforward way.",
     galleryImages: [],
     githubURL: "https://github.com/dvoranii/personal-projects-site",
     liveDemoURL: "https://outpost379.com/",
@@ -99,7 +102,8 @@ const projects = {
     ],
     galleryImages: [IldiDevCarouselThumb],
     githubURL: "https://github.com/dvoranii/portfolio-site-react",
-    projectDescription: "This is the ildidev site",
+    projectDescription:
+      "I designed and developed this portfolio site to showcase my work and experiences. It began with a simple design in Figma and was brought to life using modern web technologies. To enhance user experience, the site is also set up as a Progressive Web App, ensuring offline access and improved performance. The integrated service worker manages assets for optimal loading, and a script helps automate the updating process, ensuring everything stays current.",
     liveDemoURL: "N/A",
     figmaLink:
       "https://www.figma.com/file/LkeTEUFRxx2N3XbVw7KedA/IlDIDEV?type=design&node-id=0-1&mode=design",
