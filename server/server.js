@@ -7,6 +7,7 @@ import cors from "cors";
 import { fileURLToPath } from "url";
 import path from "path";
 import dotenv from "dotenv";
+import compression from "compression";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ const keyPath = path.join(
 );
 
 const app = express();
+app.use(compression());
 app.use(cors());
 app.use(bodyParser());
 

@@ -1,11 +1,11 @@
 .ripped-paper-bg {
   width: 100%;
   position: relative;
-  /* z-index: -1; */
 }
 
 .coming-soon--wrapper__outer {
   position: relative;
+  /* z-index: -1; */
 }
 
 .title-wrapper {
@@ -13,7 +13,10 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-100%);
-  /* z-index: -1; */
+}
+
+.title-wrapper:hover {
+  cursor: pointer;
 }
 
 .title-wrapper h2 {

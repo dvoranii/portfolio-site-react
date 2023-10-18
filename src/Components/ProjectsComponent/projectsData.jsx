@@ -85,7 +85,7 @@ const projects = {
       "I built a website to host and display my personal projects. This site gives a glimpse into the different projects I've worked on, showing my range as a developer. It's designed to be easy for visitors to navigate and see my work in a clear and straightforward way.",
     galleryImages: [],
     githubURL: "https://github.com/dvoranii/personal-projects-site",
-    liveDemoURL: "https://outpost379.com/",
+    liveDemoURL: "https://personal-projects-site.vercel.app/",
   },
   project_5: {
     id: 5,
