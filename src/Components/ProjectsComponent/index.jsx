@@ -52,6 +52,7 @@ function ProjectsComponent() {
       </div>
 
       <ProjectModalComponent
+        className="modal-component"
         isOpen={isModalOpen}
         onClose={() => {
           setIsModalOpen(false);

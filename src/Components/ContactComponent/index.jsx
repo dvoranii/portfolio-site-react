@@ -64,7 +64,6 @@ function ContactComponent() {
             setName("");
             setEmail("");
             setMessage("");
-            // alert("Form submitted successfully!");
           }, 2000);
         } else {
           setIsLoading(false);
@@ -84,7 +83,7 @@ function ContactComponent() {
         <div className={`contact-section__inner container`}>
           <h1>Let&apos;s Connect!</h1>
           <p>
-            Want to inquire about a project or employment opportunity?<br></br>{" "}
+            Want to inquire about a project or employment opportunity?<br></br>
             Fill out the form below and I will return your message shortly.
           </p>
 

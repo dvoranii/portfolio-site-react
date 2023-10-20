@@ -90,6 +90,9 @@
   cursor: pointer;
 }
 
+.modal-component {
+  z-index: 8;
+}
 @media screen and (max-width: 780px) {
   .projects--thumbnails__container-outer {
     grid-template-columns: 1fr;

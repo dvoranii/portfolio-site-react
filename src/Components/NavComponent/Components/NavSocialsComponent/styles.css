@@ -7,6 +7,7 @@
 }
 
 .social--logo {
+  min-width: 30px;
   width: 100%;
   filter: invert(1);
 }

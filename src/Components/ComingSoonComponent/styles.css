@@ -5,7 +5,7 @@
 
 .coming-soon--wrapper__outer {
   position: relative;
-  /* z-index: -1; */
+  z-index: 1;
 }
 
 .title-wrapper {

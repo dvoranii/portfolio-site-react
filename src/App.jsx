@@ -35,8 +35,10 @@ function App() {
       <AboutComponent></AboutComponent>
       <SkillsComponent></SkillsComponent>
       <CompaniesComponent></CompaniesComponent>
-      <ProjectsComponent></ProjectsComponent>
-      <ComingSoonComponent></ComingSoonComponent>
+      <ProjectsComponent className={`projects-component`}></ProjectsComponent>
+      <ComingSoonComponent
+        className={`comingSoon-component`}
+      ></ComingSoonComponent>
       <ContactComponent></ContactComponent>
       <FooterComponent></FooterComponent>
     </>
