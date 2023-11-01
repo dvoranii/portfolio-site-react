@@ -108,9 +108,9 @@
 }
 
 @media screen and (max-width: 590px) {
-  p {
+  /* p {
     font-size: 14px !important;
-  }
+  } */
 }
 
 @media screen and (max-width: 460px) {

@@ -25,3 +25,9 @@
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.521);
 }
+
+@media screen and (max-width: 664px) {
+  .title-wrapper h2 {
+    font-size: clamp(18px, 6vw, 28px);
+  }
+}

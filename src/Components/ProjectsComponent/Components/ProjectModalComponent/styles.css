@@ -251,17 +251,23 @@
   .img-wrapper {
     margin-top: 12px;
   }
+
+  .modal-info--wrapper h1 {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 458px) {
   .modal-content {
     width: 380px;
     padding: 0;
-    height: 170vw;
+    height: 190vw;
+    margin-top: 75px;
   }
 
   .img-wrapper {
     margin-top: 31px;
+    padding-bottom: 0;
   }
 
   .modal-info--wrapper {
@@ -277,6 +283,14 @@
     transform: none;
     left: 89%;
     top: 89%;
+  }
+
+  .modal-content {
+    height: 175vw;
+  }
+
+  .figmaWrapper {
+    display: none;
   }
 }
 

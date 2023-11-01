@@ -93,4 +93,8 @@
   .btn--2__wrapper--inner button {
     width: 95%;
   }
+
+  .btns--wrapper__inner button {
+    margin-top: 8px;
+  }
 }
