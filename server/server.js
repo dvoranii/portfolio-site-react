@@ -1,25 +1,12 @@
 /* eslint-disable no-undef */
 import express from "express";
-// import bodyParser from "body-parser";
 import Firestore from "@google-cloud/firestore";
 import nodemailer from "nodemailer";
 import cors from "cors";
-import { fileURLToPath } from "url";
-import path from "path";
 import dotenv from "dotenv";
 import compression from "compression";
 
 dotenv.config();
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const keyPath = path.join(
-  // eslint-disable-next-line no-undef
-  __dirname,
-  "./secrets",
-  "ildidev-form-firebase-adminsdk-5zac7-79e3b2cb99.json"
-);
 
 const app = express();
 app.use(compression());
@@ -27,9 +14,16 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+if (!process.env.FIREBASE_SERVICE_ACCOUNT) {
+  console.error(
+    "The FIREBASE_SERVICE_ACCOUNT environment variable is not set."
+  );
+  process.exit(1);
+}
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 const firestore = new Firestore({
-  projectId: "ildidev-form",
-  keyFilename: keyPath,
+  projectId: serviceAccount.project_id,
+  credentials: serviceAccount, // use the parsed service account object
 });
 
 app.get("/", (req, res) => {
