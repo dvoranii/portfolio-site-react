@@ -20,6 +20,7 @@ if (!process.env.FIREBASE_SERVICE_ACCOUNT) {
   );
   process.exit(1);
 }
+
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 const firestore = new Firestore({
   projectId: serviceAccount.project_id,
@@ -39,6 +40,7 @@ function validateFormInput(name, email) {
 
 app.post("/submitForm", async (req, res) => {
   const { name, email, message } = req.body;
+  console.log(req.body);
   if (!validateFormInput(name, email)) {
     return res
       .status(400)
@@ -63,6 +65,9 @@ app.post("/submitForm", async (req, res) => {
         clientSecret: process.env.CLIENT_SECRET,
         refreshToken: process.env.REFRESH_TOKEN,
       },
+      // tls: {
+      //   rejectUnauthorized: false,
+      // },
     });
 
     let mailOptions = {

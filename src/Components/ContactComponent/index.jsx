@@ -46,13 +46,16 @@ function ContactComponent() {
 
     setTimeout(async () => {
       try {
-        const response = await fetch("http://localhost:5000/submitForm", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name, email, message }),
-        });
+        const response = await fetch(
+          "https://desolate-river-30096-d4bafee74101.herokuapp.com//submitForm",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, message }),
+          }
+        );
 
         const result = await response.json();
 
