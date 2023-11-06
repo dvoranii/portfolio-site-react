@@ -47,7 +47,7 @@ function ContactComponent() {
     setTimeout(async () => {
       try {
         const response = await fetch(
-          "https://desolate-river-30096-d4bafee74101.herokuapp.com//submitForm",
+          "https://desolate-river-30096-d4bafee74101.herokuapp.com/submitForm",
           {
             method: "POST",
             headers: {
