@@ -18,11 +18,15 @@ function AboutComponent() {
     // eslint-disable-next-line no-unused-vars
     const handleIntersection = (entries, observer) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (waveElement && entry.isIntersecting) {
           waveElement.classList.add("visible");
-          bubbleElement.classList.add("visible");
-        } else {
+        } else if (waveElement) {
           waveElement.classList.remove("visible");
+        }
+
+        if (bubbleElement && entry.isIntersecting) {
+          bubbleElement.classList.add("visible");
+        } else if (bubbleElement) {
           bubbleElement.classList.remove("visible");
         }
       });
