@@ -2,8 +2,7 @@ import OGCarouselImg1 from "/assets/modals/carouselImages/OG-gallery-img(1).png"
 import OGCarouselImg2 from "/assets/modals/carouselImages/OG-gallery-img(2).png";
 import OGCarouselImg3 from "/assets/modals/carouselImages/OG-gallery-img(3).png";
 
-// import CGLCarouselImg1 from "/assets/modals/carouselImages/CGL-modal-img-01.png";
-import CGLCarouselThumb from "/assets/modals/carouselImages/cgl-carousel-thumb.png";
+import CGLCarouselThumb from "/assets/modals/carouselImages/cgl-thumb-bg.png";
 import CGLCarouselImg2 from "/assets/modals/carouselImages/CGL-modal-img-02.png";
 import CGLCarouselImg3 from "/assets/modals/carouselImages/CGL-modal-img-03.png";
 
@@ -15,7 +14,6 @@ import PersonalProjectsThumb from "/assets/personal-projects-thumb.png";
 import OutpostThumb from "/assets/modals/bg-me.png";
 import MyLogo from "/assets/headerLogo.png";
 
-// import OPGalleryImg01 from "/assets/modals/carouselImages/op-bg-01.png";
 import OPGalleryImg02 from "/assets/modals/carouselImages/op-bg-02.png";
 import OPGalleryImg03 from "/assets/modals/carouselImages/op-bg-03.png";
 import OPGalleryImg1 from "/assets/modals/carouselImages/op-carousel-thumb.png";
@@ -49,7 +47,7 @@ const projects = {
   },
   project_2: {
     id: 2,
-    title: "Canadian Global Logistics Inc. Website",
+    title: `CGL Website`,
     thumbnail: CGLModalThumb,
     techStack: [
       "JavaScript",
@@ -60,7 +58,7 @@ const projects = {
       "Node",
       "Photoshop",
     ],
-    projectDescription: `In the beta phase, currently deployed on Vercel, I spearheaded the development of an interactive website for Canadian Global Logistics. The highlight of the site is an immersive 3D-rendered spinning globe for the hero section. The website boasts advanced styling, user interactivity, and a responsive design. Incorporated are meticulously validated and sanitized forms for quote requests and contacts. This project emphasizes my capability to combine aesthetic design with functionality for a major logistics firm`,
+    projectDescription: `I spearheaded the beta development of Canadian Global Logistics® Inc.'s website on Vercel, featuring a 3D spinning globe and advanced, responsive design. The site includes detailed forms for quotes and contacts, showcasing my skills in creating functional, aesthetically pleasing web solutions for the logistics sector.`,
     galleryImages: [CGLCarouselThumb, CGLCarouselImg2, CGLCarouselImg3],
     githubURL: "https://github.com/dvoranii/reCaptchaV2",
     liveDemoURL: "https://cglwebsite.vercel.app/",
@@ -71,7 +69,7 @@ const projects = {
     thumbnail: OutpostThumb,
     techStack: ["JavaScript", "HTML", "CSS"],
     projectDescription:
-      "At Outpost379, I collaborated closely with the lead developer, UX designers, and client services team to execute various client projects. Additionally, I played an instrumental role in updating and maintaining the company's primary website, ensuring its responsiveness and user-friendly interface. My involvement in these projects not only underscores my adaptability in team settings but also highlights my ability to create and manage streamlined digital platforms",
+      "At Outpost379, I worked closely with a team to manage and update the company's website, ensuring it was responsive and user-friendly. My role in these projects highlights my ability to collaborate effectively and maintain high-quality digital platforms.",
     galleryImages: [OPGalleryImg1, OPGalleryImg02, OPGalleryImg03],
     githubURL: "N/A",
     liveDemoURL: "https://outpost379.com/",
@@ -89,7 +87,7 @@ const projects = {
   },
   project_5: {
     id: 5,
-    title: "Bonus: Info about this site",
+    title: "Bonus: website metadata",
     thumbnail: MyLogo,
     techStack: [
       "React",

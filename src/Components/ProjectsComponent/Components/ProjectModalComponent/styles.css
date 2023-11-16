@@ -245,8 +245,10 @@
 
 @media screen and (max-width: 558px) {
   .modal-content {
-    width: 40vh;
+    width: 44vh;
     height: 137vw;
+    grid-template-rows: 0.7fr 1fr;
+    margin-top: 60px;
   }
 
   .img-wrapper {
@@ -259,15 +261,8 @@
 }
 
 @media screen and (max-width: 458px) {
-  .modal-content {
-    width: 380px;
-    padding: 0;
-    height: 190vw;
-    margin-top: 75px;
-  }
-
   .img-wrapper {
-    margin-top: 31px;
+    margin-top: 0px;
     padding-bottom: 0;
   }
 
@@ -293,6 +288,14 @@
   .figmaWrapper {
     display: none;
   }
+
+  .carousel img {
+    height: 150px !important;
+  }
+
+  .carousel {
+    height: 185px;
+  }
 }
 
 @media screen and (min-width: 785px) and (max-height: 800px) {
@@ -303,15 +306,7 @@
 
 @media screen and (max-width: 380px) {
   .modal-content {
-    height: 150vw;
-  }
-
-  .carousel img {
-    height: 150px !important;
-  }
-
-  .carousel {
-    height: 175px;
+    height: 550px;
   }
 }
 
@@ -332,3 +327,31 @@
     margin-top: 80px;
   }
 }
+
+@media screen and (min-width: 540px) and (max-height: 720px) {
+  .modal-content {
+    height: 112vw;
+  }
+
+  .flickity-button-icon {
+    margin-top: 45px;
+  }
+
+  .carousel {
+    height: 205px;
+  }
+
+  .carousel img {
+    height: 180px !important;
+  }
+
+  .btns--wrapper__inner button {
+    padding: 4px 8px;
+  }
+}
+
+/* @media screen and (max-width: 360px) {
+  .modal-content {
+    height: 600px;
+  }
+} */

@@ -56,8 +56,6 @@ function NavComponent() {
           <NavSocialsComponent></NavSocialsComponent>
         </ul>
 
-        {/*  */}
-
         <div
           className="burger"
           onClick={() => {

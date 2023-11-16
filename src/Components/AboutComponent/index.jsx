@@ -34,7 +34,7 @@ function AboutComponent() {
 
     const options = {
       root: null,
-      rootMargin: "-200px",
+
       threshold: 0.1,
     };
 
