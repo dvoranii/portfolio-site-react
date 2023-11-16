@@ -20,6 +20,8 @@ import OPGalleryImg1 from "/assets/modals/carouselImages/op-carousel-thumb.png";
 
 import IldiDevCarouselThumb from "/assets/modals/carouselImages/ildidev-thumb.png";
 
+import PersonalProjectsCarouselImg from "/assets/personal-projects-thumb01.png";
+
 const projects = {
   project_1: {
     id: 1,
@@ -81,7 +83,7 @@ const projects = {
     techStack: ["React", "Vite", "JavaScript", "CSS", "HTML"],
     projectDescription:
       "I built a website to host and display my personal projects. This site gives a glimpse into the different projects I've worked on, showing my range as a developer. It's designed to be easy for visitors to navigate and see my work in a clear and straightforward way.",
-    galleryImages: [],
+    galleryImages: [PersonalProjectsCarouselImg],
     githubURL: "https://github.com/dvoranii/personal-projects-site",
     liveDemoURL: "https://personal-projects-site.vercel.app/",
   },
