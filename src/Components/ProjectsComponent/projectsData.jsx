@@ -103,7 +103,7 @@ const projects = {
     galleryImages: [IldiDevCarouselThumb],
     githubURL: "https://github.com/dvoranii/portfolio-site-react",
     projectDescription:
-      "I designed and developed this portfolio site to showcase my work and experiences. It began with a simple design in Figma and was brought to life using modern web technologies. To enhance user experience, the site is also set up as a Progressive Web App, ensuring offline access and improved performance. The integrated service worker manages assets for optimal loading, and a script helps automate the updating process, ensuring everything stays current.",
+      "I designed and developed this portfolio site, starting with a Figma design and bringing it to life with modern web technologies. It's a Progressive Web App for improved offline access and performance. The site features an integrated service worker for optimal loading and an automated script for regular updates.",
     liveDemoURL: "N/A",
     figmaLink:
       "https://www.figma.com/file/LkeTEUFRxx2N3XbVw7KedA/IlDIDEV?type=design&node-id=0-1&mode=design",

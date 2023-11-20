@@ -24,7 +24,6 @@ function ProjectsComponent() {
       ></TitleComponent>
 
       <div className="projects--thumbnails__container-outer">
-        {/* Main Grid Projects */}
         {Object.values(projects)
           .filter((_, index) => index <= 1)
           .map((project) => (
@@ -35,7 +34,6 @@ function ProjectsComponent() {
             />
           ))}
 
-        {/* Sub Grid Projects */}
         <div className="sub-grid">
           {Object.values(projects)
             .filter((_, index) => index > 1)
@@ -46,14 +44,13 @@ function ProjectsComponent() {
                 onClick={handleThumbnailClick}
               />
             ))}
-
-          {/* Where next row will go */}
         </div>
       </div>
 
       <ProjectModalComponent
         className="modal-component"
         isOpen={isModalOpen}
+        isLastProject={currentProject?.id === 5}
         onClose={() => {
           setIsModalOpen(false);
           setCurrentProject(null);

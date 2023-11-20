@@ -178,7 +178,7 @@
 }
 
 .figmaWrapper {
-  margin-top: 1.2rem;
+  /* margin-top: 1.2rem; */
   display: flex;
   gap: 1.2rem;
   align-items: center;
@@ -221,7 +221,13 @@
   max-width: 70px;
 }
 
+.last-project .btns--wrapper__inner button {
+  margin-top: 0;
+}
+
 @media screen and (max-width: 780px) {
+  /* CSS FOR ILDIDEV MODAL */
+
   .modal-content {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;

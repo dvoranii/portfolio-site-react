@@ -50,9 +50,21 @@ function NavComponent() {
           ></img>
         </div>
         <ul className={navActive ? "nav--list nav-active" : "nav--list"}>
-          <li>About Me</li>
-          <li>Projects</li>
-          <li>Contact</li>
+          <li>
+            <a href="#about-me--section" className="nav-link">
+              About Me
+            </a>
+          </li>
+          <li>
+            <a href="#projects-section" className="nav-link">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#contact-section" className="nav-link">
+              Contact
+            </a>
+          </li>
           <NavSocialsComponent></NavSocialsComponent>
         </ul>
 
@@ -62,9 +74,9 @@ function NavComponent() {
             setNavActive((prevState) => !prevState);
           }}
         >
-          <div className="line1">&nbsp;</div>
-          <div className="line2">&nbsp;</div>
-          <div className="line3">&nbsp;</div>
+          <div className={`line1 ${navActive ? "toggle" : ""}`}>&nbsp;</div>
+          <div className={`line2 ${navActive ? "toggle" : ""}`}>&nbsp;</div>
+          <div className={`line3 ${navActive ? "toggle" : ""}`}>&nbsp;</div>
         </div>
       </nav>
       {navActive && (

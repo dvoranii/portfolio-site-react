@@ -7,12 +7,12 @@ import PWALogo from "/assets/pwa-icon.webp";
 
 // prettier-ignore
 // eslint-disable-next-line react/prop-types, no-unused-vars
-function ProjectModalComponent({isOpen, onClose, figmaLink, children, techStack,title,description, gitRepo,siteURL}) {
+function ProjectModalComponent({isOpen, onClose, isLastProject, figmaLink, children, techStack,title,description, gitRepo,siteURL}) {
   if (!isOpen) return null;
 
   return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div  className={`modal-backdrop`} onClick={onClose}>
+      <div className={`modal-content ${isLastProject ? 'last-project' : ''}`} onClick={(e) => e.stopPropagation()}>
         <button className={`close--btn`} onClick={onClose}>
           ×
         </button>
@@ -26,7 +26,6 @@ function ProjectModalComponent({isOpen, onClose, figmaLink, children, techStack,
             {techStack && <TechIconsComponent icons={techStack} />}
           </div>
 
-          {/* Only for last project - ildidev */}
           {figmaLink && (
             <div className="figmaWrapper">
               <button>

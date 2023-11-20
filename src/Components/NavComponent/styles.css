@@ -96,6 +96,28 @@
   z-index: 9;
 }
 
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.line1,
+.line2,
+.line3 {
+  transition: all 150ms ease;
+}
+
+.toggle.line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle.line2 {
+  opacity: 0;
+}
+
+.toggle.line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
 @media screen and (min-width: 768px) {
   .nav--list li {
     opacity: 1;
