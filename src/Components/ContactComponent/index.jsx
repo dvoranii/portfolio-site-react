@@ -20,7 +20,9 @@ function ContactComponent() {
   console.log(window.location.origin);
 
   useEffect(() => {
-    fetch(`${window.location.origin}/get-csrf-token`)
+    fetch(
+      `https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`
+    )
       .then((response) => response.json())
       .then((data) => setCsrfToken(data.csrfToken));
   }, []);
