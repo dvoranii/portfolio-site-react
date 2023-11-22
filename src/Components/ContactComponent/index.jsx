@@ -17,15 +17,14 @@ function ContactComponent() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  // check the csrf token value
   useEffect(() => {
-    fetch(
-      `https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`,
-      {
-        credentials: "include",
-      }
-    )
+    fetch(`https://your-backend.com/get-csrf-token`, { credentials: "include" })
       .then((response) => response.json())
-      .then((data) => setCsrfToken(data.csrfToken));
+      .then((data) => {
+        console.log("CSRF Token fetched from server:", data.csrfToken);
+        setCsrfToken(data.csrfToken);
+      });
   }, []);
 
   function sanitizeInput(str) {
@@ -70,6 +69,7 @@ function ContactComponent() {
 
     setIsLoading(true);
 
+    console.log("CSRF Token being sent in POST request:", csrfToken);
     setTimeout(async () => {
       try {
         const sanitizedName = sanitizeInput(name);
