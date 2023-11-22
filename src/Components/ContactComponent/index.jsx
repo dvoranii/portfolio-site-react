@@ -18,7 +18,7 @@ function ContactComponent() {
   const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
-    fetch("/get-csrf-token")
+    fetch(`${window.location.origin}/get-csrf-token`)
       .then((response) => response.json())
       .then((data) => setCsrfToken(data.csrfToken));
   }, []);
