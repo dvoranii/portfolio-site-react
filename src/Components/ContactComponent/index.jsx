@@ -19,7 +19,10 @@ function ContactComponent() {
 
   // check the csrf token value
   useEffect(() => {
-    fetch(`https://your-backend.com/get-csrf-token`, { credentials: "include" })
+    fetch(
+      `"https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`,
+      { credentials: "include" }
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log("CSRF Token fetched from server:", data.csrfToken);
