@@ -27,11 +27,14 @@ function ContactComponent() {
   //     .then((data) => setCsrfToken(data.csrfToken));
   // }, []);
 
-  console.log(
-    fetch(
-      `https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`
-    ).then((response) => console.log(response.json()))
-  );
+  const csrfFetch = fetch(
+    `https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`
+  )
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
+
+  console.log(csrfFetch);
 
   function sanitizeInput(str) {
     return str.replace(
