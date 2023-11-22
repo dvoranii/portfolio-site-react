@@ -16,6 +16,20 @@ function ContactComponent() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  function sanitizeInput(str) {
+    return str.replace(
+      /[&<>"']/g,
+      (match) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        }[match])
+    );
+  }
+
   const validateFormInput = () => {
     const isNameValid = name && /^[A-Za-z\s]+$/.test(name);
     const isEmailValid = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(email);
@@ -46,6 +60,10 @@ function ContactComponent() {
 
     setTimeout(async () => {
       try {
+        const sanitizedName = sanitizeInput(name);
+        const sanitizedEmail = sanitizeInput(email);
+        const sanitizedMessage = sanitizeInput(message);
+
         const response = await fetch(
           "https://desolate-river-30096-d4bafee74101.herokuapp.com/submitForm",
           {
@@ -53,7 +71,11 @@ function ContactComponent() {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ name, email, message }),
+            body: JSON.stringify({
+              name: sanitizedName,
+              email: sanitizedEmail,
+              message: sanitizedMessage,
+            }),
           }
         );
 

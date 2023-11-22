@@ -228,6 +228,10 @@
 @media screen and (max-width: 780px) {
   /* CSS FOR ILDIDEV MODAL */
 
+  .last-project .btns--wrapper__inner button {
+    margin-top: 24px;
+  }
+
   .modal-content {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
