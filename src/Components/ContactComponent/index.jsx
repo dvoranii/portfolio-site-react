@@ -1,9 +1,10 @@
 import "./styles.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import CheckmarkSVG from "./Components/CheckmarkSVG";
 import LoadingSpinnerSVG from "./LoadingSpinnerSVG";
 
 function ContactComponent() {
+  const [csrfToken, setCsrfToken] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -15,6 +16,12 @@ function ContactComponent() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  useEffect(() => {
+    fetch("/get-csrf-token")
+      .then((response) => response.json())
+      .then((data) => setCsrfToken(data.csrfToken));
+  }, []);
 
   function sanitizeInput(str) {
     return str.replace(
@@ -70,6 +77,7 @@ function ContactComponent() {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
+              "X-CSRF-Token": csrfToken,
             },
             body: JSON.stringify({
               name: sanitizedName,
