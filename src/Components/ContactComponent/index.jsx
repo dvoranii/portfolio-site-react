@@ -1,10 +1,10 @@
 import "./styles.css";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import CheckmarkSVG from "./Components/CheckmarkSVG";
 import LoadingSpinnerSVG from "./LoadingSpinnerSVG";
 
 function ContactComponent() {
-  const [csrfToken, setCsrfToken] = useState("");
+  // const [csrfToken, setCsrfToken] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -19,13 +19,19 @@ function ContactComponent() {
 
   console.log(window.location.origin);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   fetch(
+  //     `https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => setCsrfToken(data.csrfToken));
+  // }, []);
+
+  console.log(
     fetch(
       `https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`
-    )
-      .then((response) => response.json())
-      .then((data) => setCsrfToken(data.csrfToken));
-  }, []);
+    ).then((response) => console.log(response))
+  );
 
   function sanitizeInput(str) {
     return str.replace(
