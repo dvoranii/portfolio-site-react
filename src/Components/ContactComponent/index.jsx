@@ -20,7 +20,7 @@ function ContactComponent() {
   // check the csrf token value
   useEffect(() => {
     fetch(
-      `"https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`,
+      `https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`,
       { credentials: "include" }
     )
       .then((response) => response.json())
