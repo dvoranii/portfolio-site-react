@@ -30,7 +30,7 @@ function ContactComponent() {
   console.log(
     fetch(
       `https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`
-    ).then((response) => console.log(response))
+    ).then((response) => console.log(response.json()))
   );
 
   function sanitizeInput(str) {
