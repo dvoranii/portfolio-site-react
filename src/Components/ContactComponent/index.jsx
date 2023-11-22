@@ -107,9 +107,9 @@ function ContactComponent() {
           setIsLoading(false);
           console.log("Error submitting the form. Please try again.");
         }
-      } catch {
+      } catch (error) {
         // update the DOM here
-        console.log("An error occurred. Please try again later.");
+        console.log("An error occurred. Please try again later.", error);
       } finally {
         setIsLoading(false);
       }
