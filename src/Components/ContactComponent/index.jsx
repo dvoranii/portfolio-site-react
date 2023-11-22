@@ -25,22 +25,6 @@ function ContactComponent() {
       .then((data) => setCsrfToken(data.csrfToken));
   }, []);
 
-  // fetch(
-  //   "https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token"
-  // )
-  //   .then((response) => {
-  //     if (!response.ok) {
-  //       throw new Error(`HTTP error! Status: ${response.status}`);
-  //     }
-  //     return response.json();
-  //   })
-  //   .then((data) => {
-  //     console.log(data);
-  //   })
-  //   .catch((error) => {
-  //     console.error(error);
-  //   });
-
   function sanitizeInput(str) {
     return str.replace(
       /[&<>"']/g,
