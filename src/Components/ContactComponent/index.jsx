@@ -1,10 +1,10 @@
 import "./styles.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import CheckmarkSVG from "./Components/CheckmarkSVG";
 import LoadingSpinnerSVG from "./LoadingSpinnerSVG";
 
 function ContactComponent() {
-  // const [csrfToken, setCsrfToken] = useState("");
+  const [csrfToken, setCsrfToken] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -17,29 +17,29 @@ function ContactComponent() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // useEffect(() => {
-  //   fetch(
-  //     `https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => setCsrfToken(data.csrfToken));
-  // }, []);
+  useEffect(() => {
+    fetch(
+      `https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`
+    )
+      .then((response) => response.json())
+      .then((data) => setCsrfToken(data.csrfToken));
+  }, []);
 
-  fetch(
-    "https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token"
-  )
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+  // fetch(
+  //   "https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token"
+  // )
+  //   .then((response) => {
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! Status: ${response.status}`);
+  //     }
+  //     return response.json();
+  //   })
+  //   .then((data) => {
+  //     console.log(data);
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
 
   function sanitizeInput(str) {
     return str.replace(
@@ -95,7 +95,7 @@ function ContactComponent() {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              // "X-CSRF-Token": csrfToken,
+              "X-CSRF-Token": csrfToken,
             },
             body: JSON.stringify({
               name: sanitizedName,
