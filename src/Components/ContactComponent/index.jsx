@@ -25,7 +25,6 @@ function ContactComponent() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log("CSRF Token fetched from server:", data.csrfToken);
         setCsrfToken(data.csrfToken);
       });
   }, []);
@@ -72,7 +71,6 @@ function ContactComponent() {
 
     setIsLoading(true);
 
-    console.log("CSRF Token being sent in POST request:", csrfToken);
     setTimeout(async () => {
       try {
         const sanitizedName = sanitizeInput(name);
@@ -92,6 +90,8 @@ function ContactComponent() {
               email: sanitizedEmail,
               message: sanitizedMessage,
             }),
+            credentials: "include",
+            mode: "cors",
           }
         );
 
