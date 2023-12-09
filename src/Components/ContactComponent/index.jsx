@@ -1,15 +1,23 @@
 import "./styles.css";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import CheckmarkSVG from "./Components/CheckmarkSVG";
 import LoadingSpinnerSVG from "./LoadingSpinnerSVG";
+import { useCsrfToken } from "../../Hooks/useCSRF";
+import sanitizeInput from "../../Utils/sanitizeInput";
+import validateInput from "../../Utils/validateInput";
+import { useRecaptcha } from "../../Hooks/useReCAPTCHA";
 
 function ContactComponent() {
-  const [csrfToken, setCsrfToken] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [nameError, setNameError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
+  const csrfToken = useCsrfToken();
+  const recaptchaToken = useRecaptcha(
+    "6LeIxigpAAAAAN-qimSvlyO5RJcPdHJ2J7AD_eMo"
+  );
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({});
 
   const nameInputRef = useRef(null);
   const emailInputRef = useRef(null);
@@ -17,83 +25,52 @@ function ContactComponent() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // check the csrf token value
-  useEffect(() => {
-    fetch(
-      `https://desolate-river-30096-d4bafee74101.herokuapp.com/get-csrf-token`,
-      { credentials: "include" }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setCsrfToken(data.csrfToken);
-      });
-  }, []);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
 
-  function sanitizeInput(str) {
-    return str.replace(
-      /[&<>"']/g,
-      (match) =>
-        ({
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#39;",
-        }[match])
-    );
-  }
+  const validateForm = () => {
+    let newErrors = {
+      name: validateInput.name(formData.name),
+      email: validateInput.email(formData.email),
+    };
 
-  const validateFormInput = () => {
-    const isNameValid = name && /^[A-Za-z\s]+$/.test(name);
-    const isEmailValid = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(email);
-
-    setNameError(!isNameValid);
-    setEmailError(!isEmailValid);
-
-    if (!isNameValid) {
-      nameInputRef.current.focus();
-    } else if (!isEmailValid) {
-      emailInputRef.current.focus();
-    }
-
-    return isNameValid && isEmailValid;
+    setErrors(newErrors);
+    return Object.values(newErrors).every((error) => error === "");
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const isValid = validateFormInput();
-
-    if (!isValid) {
+    if (!validateForm()) {
       console.log("Error submitting form");
       return;
     }
 
     setIsLoading(true);
 
+    const sanitizedData = {
+      name: sanitizeInput.text(formData.name),
+      email: sanitizeInput.email(formData.email),
+      message: sanitizeInput.text(formData.message),
+    };
+
     setTimeout(async () => {
       try {
-        const sanitizedName = sanitizeInput(name);
-        const sanitizedEmail = sanitizeInput(email);
-        const sanitizedMessage = sanitizeInput(message);
-
-        const response = await fetch(
-          "https://desolate-river-30096-d4bafee74101.herokuapp.com/submitForm",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "X-CSRF-Token": csrfToken,
-            },
-            body: JSON.stringify({
-              name: sanitizedName,
-              email: sanitizedEmail,
-              message: sanitizedMessage,
-            }),
-            credentials: "include",
-            mode: "cors",
-          }
-        );
+        const response = await fetch("http://localhost:5000/process", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": csrfToken,
+          },
+          body: JSON.stringify({ ...sanitizedData, recaptchaToken }),
+          credentials: "include",
+          mode: "cors",
+        });
 
         const result = await response.json();
 
@@ -102,9 +79,11 @@ function ContactComponent() {
 
           setTimeout(() => {
             setIsSuccess(false);
-            setName("");
-            setEmail("");
-            setMessage("");
+            setFormData({
+              name: "",
+              email: "",
+              message: "",
+            });
           }, 2000);
         } else {
           setIsLoading(false);
@@ -133,14 +112,14 @@ function ContactComponent() {
               <div className="name-input__wrapper">
                 <input
                   ref={nameInputRef}
-                  className={`name-input ${nameError ? "input-error" : ""}`}
+                  className={`name-input ${errors.name ? "input-error" : ""}`}
                   type="text"
                   name="name"
                   placeholder="Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={formData.name}
+                  onChange={handleChange}
                 />
-                {nameError && (
+                {errors.name && (
                   <span className="error-message">
                     Please enter a valid name
                   </span>
@@ -150,14 +129,14 @@ function ContactComponent() {
               <div className="email-input__wrapper">
                 <input
                   ref={emailInputRef}
-                  className={`email-input ${emailError ? "input-error" : ""}`}
+                  className={`email-input ${errors.email ? "input-error" : ""}`}
                   type="text"
                   name="email"
                   placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={formData.email}
+                  onChange={handleChange}
                 />
-                {emailError && (
+                {errors.email && (
                   <span className="error-message">
                     Please enter a valid email (<i>123@example.com</i>)
                   </span>
@@ -171,8 +150,8 @@ function ContactComponent() {
               id=""
               cols="30"
               rows="10"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              value={formData.message}
+              onChange={handleChange}
             ></textarea>
             <div className="button-row">
               {!isLoading && !isSuccess && (
