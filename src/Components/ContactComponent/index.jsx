@@ -2,15 +2,15 @@ import "./styles.css";
 import { useState, useRef } from "react";
 import CheckmarkSVG from "./Components/CheckmarkSVG";
 import LoadingSpinnerSVG from "./LoadingSpinnerSVG";
-import { useCsrfToken } from "../../Hooks/useCSRF";
 import sanitizeInput from "../../Utils/sanitizeInput";
 import validateInput from "../../Utils/validateInput";
+import { useCsrfToken } from "../../Hooks/useCSRF";
 import { useRecaptcha } from "../../Hooks/useReCAPTCHA";
 
 function ContactComponent() {
   const csrfToken = useCsrfToken();
   const recaptchaToken = useRecaptcha(
-    "6LeIxigpAAAAAN-qimSvlyO5RJcPdHJ2J7AD_eMo"
+    "6LdntzApAAAAAH5dBl-21sMj1Gv0W_EdTEJV5tKF"
   );
   const [formData, setFormData] = useState({
     name: "",
@@ -61,6 +61,9 @@ function ContactComponent() {
 
     setTimeout(async () => {
       try {
+        // need to change this to heroku URL for production
+        // find a way to do both at the same time, or at least create a
+        // process that makes this simple
         const response = await fetch("http://localhost:5000/process", {
           method: "POST",
           headers: {
@@ -90,7 +93,6 @@ function ContactComponent() {
           console.log("Error submitting the form. Please try again.");
         }
       } catch (error) {
-        // update the DOM here
         console.log("An error occurred. Please try again later.", error);
       } finally {
         setIsLoading(false);
