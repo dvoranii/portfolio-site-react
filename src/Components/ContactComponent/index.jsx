@@ -61,16 +61,19 @@ function ContactComponent() {
 
     setTimeout(async () => {
       try {
-        const response = await fetch("http://localhost:5000/process", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-CSRF-Token": csrfToken,
-          },
-          body: JSON.stringify({ ...sanitizedData, recaptchaToken }),
-          credentials: "include",
-          mode: "cors",
-        });
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/process`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRF-Token": csrfToken,
+            },
+            body: JSON.stringify({ ...sanitizedData, recaptchaToken }),
+            credentials: "include",
+            mode: "cors",
+          }
+        );
 
         const result = await response.json();
 

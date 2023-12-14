@@ -6,7 +6,7 @@ export const useCsrfToken = () => {
   useEffect(() => {
     const fetchCsrfToken = async () => {
       try {
-        const response = await fetch("http://localhost:5000/csrf", {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/csrf`, {
           credentials: "include",
         });
         const data = await response.json();
