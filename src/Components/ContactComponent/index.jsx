@@ -61,9 +61,6 @@ function ContactComponent() {
 
     setTimeout(async () => {
       try {
-        // need to change this to heroku URL for production
-        // find a way to do both at the same time, or at least create a
-        // process that makes this simple
         const response = await fetch("http://localhost:5000/process", {
           method: "POST",
           headers: {
@@ -78,6 +75,7 @@ function ContactComponent() {
         const result = await response.json();
 
         if (result.status === "success") {
+          console.log(result);
           setIsSuccess(true);
 
           setTimeout(() => {
