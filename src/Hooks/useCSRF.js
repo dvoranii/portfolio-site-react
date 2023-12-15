@@ -19,7 +19,7 @@ export const useCsrfToken = () => {
     if (!csrfToken) {
       fetchCsrfToken();
     }
-  }, [csrfToken]);
+  }, []);
 
   return csrfToken;
 };

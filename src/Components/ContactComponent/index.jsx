@@ -4,11 +4,11 @@ import CheckmarkSVG from "./Components/CheckmarkSVG";
 import LoadingSpinnerSVG from "./LoadingSpinnerSVG";
 import sanitizeInput from "../../Utils/sanitizeInput";
 import validateInput from "../../Utils/validateInput";
-// import { useCsrfToken } from "../../Hooks/useCSRF";
+import { useCsrfToken } from "../../Hooks/useCSRF";
 import { useRecaptcha } from "../../Hooks/useReCAPTCHA";
 
 function ContactComponent() {
-  // const csrfToken = useCsrfToken();
+  const csrfToken = useCsrfToken();
   const recaptchaToken = useRecaptcha(
     "6LdntzApAAAAAH5dBl-21sMj1Gv0W_EdTEJV5tKF"
   );
@@ -67,7 +67,7 @@ function ContactComponent() {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              // "X-CSRF-Token": csrfToken,
+              "X-CSRF-Token": csrfToken,
             },
             body: JSON.stringify({ ...sanitizedData, recaptchaToken }),
             credentials: "include",
