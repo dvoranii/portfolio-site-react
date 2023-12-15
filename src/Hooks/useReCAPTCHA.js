@@ -9,7 +9,6 @@ export const useRecaptcha = (siteKey) => {
         window.grecaptcha
           .execute(siteKey, { action: "homepage" })
           .then((token) => {
-            console.log(token);
             setRecaptchaToken(token);
           });
       });
