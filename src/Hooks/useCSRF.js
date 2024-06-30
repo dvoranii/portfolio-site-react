@@ -9,16 +9,18 @@ export const useCsrfToken = () => {
         const response = await fetch(`${import.meta.env.VITE_API_URL}/csrf`, {
           credentials: "include",
         });
-        const data = await response.json();
-        setCsrfToken(data.csrfToken);
+        if (response.ok) {
+          const data = await response.json();
+          setCsrfToken(data.csrfToken);
+        } else {
+          console.error("Failed to fetch CSRF token");
+        }
       } catch (error) {
         console.error("Error fetching CSRF token:", error);
       }
     };
 
-    if (!csrfToken) {
-      fetchCsrfToken();
-    }
+    fetchCsrfToken();
   }, []);
 
   return csrfToken;

@@ -1,30 +1,43 @@
 import "./styles.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import CheckmarkSVG from "./Components/CheckmarkSVG";
 import LoadingSpinnerSVG from "./LoadingSpinnerSVG";
 import sanitizeInput from "../../Utils/sanitizeInput";
 import validateInput from "../../Utils/validateInput";
-// import { useCsrfToken } from "../../Hooks/useCSRF";
+import { useCsrfToken } from "../../Hooks/useCSRF";
 import { useRecaptcha } from "../../Hooks/useReCAPTCHA";
 
 function ContactComponent() {
-  // const csrfToken = useCsrfToken();
-
+  const csrfToken = useCsrfToken();
   const recaptchaToken = useRecaptcha(
     "6LdntzApAAAAAH5dBl-21sMj1Gv0W_EdTEJV5tKF"
   );
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
   const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const nameInputRef = useRef(null);
   const emailInputRef = useRef(null);
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  useEffect(() => {
+    if (isSuccess) {
+      const timer = setTimeout(() => {
+        setIsSuccess(false);
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [isSuccess]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,11 +48,10 @@ function ContactComponent() {
   };
 
   const validateForm = () => {
-    let newErrors = {
+    const newErrors = {
       name: validateInput.name(formData.name),
       email: validateInput.email(formData.email),
     };
-
     setErrors(newErrors);
     return Object.values(newErrors).every((error) => error === "");
   };
@@ -47,12 +59,15 @@ function ContactComponent() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    console.log("Form submission started");
+
     if (!validateForm()) {
-      console.log("Error submitting form");
+      console.log("Form validation failed", errors);
       return;
     }
 
     setIsLoading(true);
+    console.log("Loading state set to true");
 
     const sanitizedData = {
       name: sanitizeInput.text(formData.name),
@@ -60,47 +75,40 @@ function ContactComponent() {
       message: sanitizeInput.text(formData.message),
     };
 
-    setTimeout(async () => {
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/process`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              // "X-CSRF-Token": csrfToken,
-            },
-            body: JSON.stringify({ ...sanitizedData, recaptchaToken }),
-            credentials: "include",
-            mode: "cors",
-          }
-        );
+    console.log("Sanitized data:", sanitizedData);
 
-        const result = await response.json();
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-Token": csrfToken,
+        },
+        body: JSON.stringify({ ...sanitizedData, recaptchaToken }),
+        credentials: "include",
+        mode: "cors",
+      });
 
-        if (result.status === "success") {
-          console.log(result);
-          setIsSuccess(true);
+      console.log("Fetch request sent");
 
-          setTimeout(() => {
-            setIsSuccess(false);
-            setFormData({
-              name: "",
-              email: "",
-              message: "",
-            });
-          }, 2000);
-        } else {
-          setIsLoading(false);
-          console.log("Error submitting the form. Please try again.");
-        }
-      } catch (error) {
-        console.log("An error occurred. Please try again later.", error);
-      } finally {
+      const result = await response.json();
+      console.log("Response received:", result);
+
+      if (result.status === "success") {
+        console.log("Form submission successful");
+        setIsSuccess(true);
+      } else {
         setIsLoading(false);
+        console.log("Form submission failed:", result);
       }
-    }, 2000);
+    } catch (error) {
+      console.log("An error occurred during form submission:", error);
+    } finally {
+      setIsLoading(false);
+      console.log("Loading state set to false");
+    }
   };
+
   return (
     <div id="contact-section" className={`contact-section__outer`}>
       <div className={`contact-section`}>

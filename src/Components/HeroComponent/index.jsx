@@ -12,6 +12,7 @@ function HeroComponent() {
   // understand closures here...
   // could make a useful tutorial...
   // Need to use this apprao
+  // this might need to be its own component
 
   useEffect(() => {
     i = 0; // Reset i to 0 every time useEffect runs
